@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">NEX Launcher</string>
+    <string name="open_app">open</string>
+    <string name="smart_boost">Smart Boost</string>
+    <string name="junk_cleaner">Junk Cleaner</string>
+    <string name="task_manager">Task Manager</string>
+    <string name="virus_scanner">Virus Scanner</string>
+    <string name="ai_floating_touch">AI Floating Touch</string>
+    <string name="screen_recorder_settings">Screen Recorder Settings</string>
+    <string name="smart_boost_desc">Smart boost allows an app to utilise the CPU and GPU without any limitations. This will consume more battery power and disable other apps running in the background.</string>
+    <string name="juck_cleaner_desc">Free up space by deleting thumbnails, uninstalled apks and cache.</string>
+    <string name="task_manager_desc">View and stop the activities running in the background.</string>
+    <string name="virus_scan_desc">Scan and remove threats and keep your phone safe!</string>
+    <string name="ai_floating_touch_desc">Your phone will predict your needs based on your usage. Access the menu of your own custom shortcuts. Gestures gives you various ways to control your phone.</string>
+    <string name="screen_recorder_settings_desc">Go to the settings page of Screen recorder.</string>
+    <string name="intro">Open Smart Boost, Junk Cleaner, Task Manager, Virus Scanner, AI Floating Touch and Screen Recorder Settings from here.</string>
+    <string name="help">Help</string>
+    <string name="info">About</string>
+    <string name="invert_theme">Theme</string>
+    <string name="home">Home</string>
+    <string name="img_desc">NEX Logo</string>
+    <string name="about">This is not a standalone app and is useless if you don\'t have my NEX Magisk module installed.</string>
+    <string name="app_version">App Version</string>
+    <string name="made_by">Made with 💙 by</string>
+    <string name="my_name">Akilesh</string>
+    <string name="dark_theme">Dark theme</string>
+    <string name="apply_dark_theme">Apply dark theme to the app</string>
+    <string name="apply">Apply</string>
+    <string name="light_theme">Light theme</string>
+    <string name="apply_light_theme">Apply light theme to the app</string>
+
+</resources>
