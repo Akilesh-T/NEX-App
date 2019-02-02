@@ -30,5 +30,10 @@
     <string name="apply">Apply</string>
     <string name="light_theme">Light theme</string>
     <string name="apply_light_theme">Apply light theme to the app</string>
+    <string name="device">Device</string>
+    <string name="model">Model</string>
+    <string name="brand">Brand</string>
+    <string name="code_name">Code Name</string>
+    <string name="build_version">Build Version</string>
 
 </resources>

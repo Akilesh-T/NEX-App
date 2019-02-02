@@ -1,6 +1,7 @@
 package app.akilesh.nex;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
@@ -13,6 +14,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -22,6 +24,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
 import java.util.List;
+import java.util.Objects;
 
 import static android.view.View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
 import static android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
@@ -29,7 +32,7 @@ import static android.view.WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACK
 
 
 
-public class MainActivity extends AppCompatActivity implements HomeFragment.OnFragmentInteractionListener, AboutFragment.OnFragmentInteractionListener, HelpFragment.OnFragmentInteractionListener, ThemeFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements HomeFragment.OnFragmentInteractionListener, AboutFragment.OnFragmentInteractionListener, HelpFragment.OnFragmentInteractionListener, ThemeFragment.OnFragmentInteractionListener, DeviceFragment.OnFragmentInteractionListener {
     int modeType;
 
     @Override
@@ -42,6 +45,8 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
         int themeID = sharedPref.getInt("ThemePrefs",1);
         AppCompatDelegate.setDefaultNightMode(themeID);
 
+        Objects.requireNonNull(getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.abs_layout);
 
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -51,7 +56,6 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
 
         }
 
-        //
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -70,6 +74,10 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
 
                     case R.id.menu_invert:
                         fragment = ThemeFragment.newInstance();
+                        break;
+
+                    case R.id.device_info:
+                        fragment = DeviceFragment.newInstance();
                         break;
 
 

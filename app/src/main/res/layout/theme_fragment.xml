@@ -34,6 +34,7 @@
             android:textColor="@color/colorAccent"
             android:background="@color/background"
             android:textSize="19sp"
+            android:layout_marginTop="5dp"
             android:text="@string/dark_theme"/>
 
 
@@ -87,6 +88,7 @@
             android:textColor="@color/colorAccent"
             android:textSize="19sp"
             android:background="@color/background"
+            android:layout_marginTop="5dp"
             android:text="@string/light_theme"/>
 
 
