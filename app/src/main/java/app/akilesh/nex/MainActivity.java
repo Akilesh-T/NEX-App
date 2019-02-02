@@ -146,6 +146,14 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
 
     }
 
+    public void launchFireWall(View view) {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.setClassName("com.evenwell.firewall", "com.evenwell.firewall.TrafficControl");
+        if (isCallable(intent)) startActivity(intent);
+        else Toast.makeText(this, "App Traffic Control is not installed", Toast.LENGTH_SHORT).show();
+
+    }
+
 }
 
 
