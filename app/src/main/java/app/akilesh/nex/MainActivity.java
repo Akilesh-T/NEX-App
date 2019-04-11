@@ -6,15 +6,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import app.akilesh.nex.fragments.AboutFragment;
+import app.akilesh.nex.fragments.DeviceFragment;
+import app.akilesh.nex.fragments.HelpFragment;
+import app.akilesh.nex.fragments.HomeFragment;
+import app.akilesh.nex.fragments.ThemeFragment;
 
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -33,7 +38,7 @@ import static android.view.WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACK
 
 
 public class MainActivity extends AppCompatActivity implements HomeFragment.OnFragmentInteractionListener, AboutFragment.OnFragmentInteractionListener, HelpFragment.OnFragmentInteractionListener, ThemeFragment.OnFragmentInteractionListener, DeviceFragment.OnFragmentInteractionListener {
-    int modeType;
+    int currentNightMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,18 +47,26 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
         setContentView(R.layout.activity_main);
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-        int themeID = sharedPref.getInt("ThemePrefs",1);
+        int themeID = sharedPref.getInt("ThemePrefs",-1);
         AppCompatDelegate.setDefaultNightMode(themeID);
+        currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.abs_layout);
 
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        modeType=AppCompatDelegate.getDefaultNightMode();
-        if(modeType == AppCompatDelegate.MODE_NIGHT_NO) {
-            decorView.setSystemUiVisibility(SYSTEM_UI_FLAG_LIGHT_STATUS_BAR | SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
 
+        switch (currentNightMode) {
+            case Configuration.UI_MODE_NIGHT_NO:
+                // Night mode is not active, we're in day time
+                decorView.setSystemUiVisibility(SYSTEM_UI_FLAG_LIGHT_STATUS_BAR | SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
+
+            case Configuration.UI_MODE_NIGHT_YES:
+                // Night mode is active, we're at night!
+
+            case Configuration.UI_MODE_NIGHT_UNDEFINED:
+                // We don't know what mode we're in, assume notnight
         }
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -159,6 +172,14 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
         intent.setClassName("com.evenwell.firewall", "com.evenwell.firewall.TrafficControl");
         if (isCallable(intent)) startActivity(intent);
         else Toast.makeText(this, "App Traffic Control is not installed", Toast.LENGTH_SHORT).show();
+
+    }
+
+    public void launchGameAssistant(View view) {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.setClassName("com.nbc.gameassistant", "com.nbc.gameassistant.GameAssistantActivity");
+        if (isCallable(intent)) startActivity(intent);
+        else Toast.makeText(this, "Game assistant is not installed", Toast.LENGTH_SHORT).show();
 
     }
 

@@ -15,7 +15,7 @@
     <string name="app_traffic_desc">You decide which apps can use your mobile data and WiFi!</string>
     <string name="ai_floating_touch_desc">Your phone will predict your needs based on your usage. Access the menu of your own custom shortcuts. Gestures gives you various ways to control your phone.</string>
     <string name="screen_recorder_settings_desc">Go to the settings page of Screen recorder.</string>
-    <string name="intro">Open AI Floating Touch, App Traffic Control, Junk Cleaner, Screen Recorder Settings, Smart Boost, Task Manager and Virus Scanner from here.</string>
+    <string name="intro">Launch the apps included in Nokia Extensions from here.</string>
     <string name="help">Help</string>
     <string name="info">About</string>
     <string name="invert_theme">Theme</string>
@@ -25,15 +25,22 @@
     <string name="app_version">App Version</string>
     <string name="made_by">Made with 💙 by</string>
     <string name="my_name">Akilesh</string>
-    <string name="dark_theme">Dark theme</string>
-    <string name="apply_dark_theme">Apply dark theme to the app</string>
+    <string name="dark_theme">Dark</string>
+    <string name="apply_dark_theme">Apply dark theme to the app.</string>
     <string name="apply">Apply</string>
-    <string name="light_theme">Light theme</string>
-    <string name="apply_light_theme">Apply light theme to the app</string>
+    <string name="light_theme">Light</string>
+    <string name="apply_light_theme">Apply light theme to the app.</string>
     <string name="device">Device</string>
     <string name="model">Model</string>
     <string name="brand">Brand</string>
     <string name="code_name">Code Name</string>
     <string name="build_version">Build Version</string>
+    <string name="game_assistant">Game Assistant</string>
+    <string name="game_assistant_desc">Enhance your gaming experience using Game Assistant.</string>
+    <string name="battery">Set by Battery Saver</string>
+    <string name="apply_auto_battery_theme">Apply dark theme automatically when battery saver is on.</string>
+    <string name="followSystem">Use system default</string>
+    <string name="apply_system_night_mode">Apply default night mode of the device.</string>
+    <string name="current_night_mode">Current Night Mode</string>
 
 </resources>
