@@ -54,7 +54,7 @@ public class DeviceFragment extends Fragment {
             Process process = Runtime.getRuntime().exec("su");
             InputStream in = process.getInputStream();
             OutputStream out = process.getOutputStream();
-            String cmd = "[ -r /data/misc/box/report/PREV_VER ] && cat /data/misc/box/report/PREV_VER";
+            String cmd = "[ -r /proc/fver ] && head -n 1 /proc/fver";
             out.write(cmd.getBytes());
             out.flush();
             out.close();
@@ -68,9 +68,8 @@ public class DeviceFragment extends Fragment {
                 StringBuilder sb = new StringBuilder();
                 while((ch = in.read()) != -1)
                     sb.append((char)ch);
-                buildVer = sb.toString();
+                buildVer = sb.toString().substring(4,23);
             }
-
             buildVer = buildVer.trim();
 
         } catch (IOException e) {
