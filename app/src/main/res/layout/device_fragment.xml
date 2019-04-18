@@ -50,6 +50,7 @@
                     android:textColor="@color/colorAccent"
                     android:layout_marginTop="5dp"
                     android:background="@color/background"
+                    android:fontFamily="@font/nokia_pure"
                     android:textSize="19sp"
                     android:text="@string/brand"/>
 
@@ -62,6 +63,7 @@
                     android:layout_marginTop="35dp"
                     android:textSize="18sp"
                     android:background="@color/background"
+                    android:fontFamily="@font/nokia_pure"
                     android:textColor="?android:attr/textColorPrimary"
                     android:id="@+id/brand"/>
 
@@ -87,6 +89,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/colorAccent"
                 android:layout_marginTop="5dp"
+                android:fontFamily="@font/nokia_pure"
                 android:background="@color/background"
                 android:textSize="19sp"
                 android:text="@string/model"/>
@@ -98,6 +101,7 @@
                 android:layout_gravity="fill_horizontal"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="35dp"
+                android:fontFamily="@font/nokia_pure"
                 android:textSize="18sp"
                 android:background="@color/background"
                 android:textColor="?android:attr/textColorPrimary"
@@ -125,6 +129,7 @@
                     android:textAllCaps="false"
                     android:textColor="@color/colorAccent"
                     android:layout_marginTop="5dp"
+                    android:fontFamily="@font/nokia_pure"
                     android:background="@color/background"
                     android:textSize="19sp"
                     android:text="@string/code_name"/>
@@ -138,6 +143,7 @@
                     android:layout_marginTop="35dp"
                     android:textSize="18sp"
                     android:background="@color/background"
+                    android:fontFamily="@font/nokia_pure"
                     android:textColor="?android:attr/textColorPrimary"
                     android:id="@+id/codeName"/>
 
@@ -164,6 +170,7 @@
                     android:textAllCaps="false"
                     android:textColor="@color/colorAccent"
                     android:layout_marginTop="5dp"
+                    android:fontFamily="@font/nokia_pure"
                     android:background="@color/background"
                     android:textSize="19sp"
                     android:text="@string/build_version"/>
@@ -177,6 +184,7 @@
                     android:layout_marginTop="35dp"
                     android:textSize="18sp"
                     android:background="@color/background"
+                    android:fontFamily="@font/nokia_pure"
                     android:textColor="?android:attr/textColorPrimary"
                     android:id="@+id/buildVersion"/>
 

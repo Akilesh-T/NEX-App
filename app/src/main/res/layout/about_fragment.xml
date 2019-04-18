@@ -78,7 +78,7 @@
             android:layout_marginTop="12dp"
             android:textSize="18sp"
             android:textColor="?android:attr/textColorPrimary"
-            android:typeface="sans"
+            android:fontFamily="@font/nokia_pure"
             android:background="@color/background"
             android:text="@string/about"/>
 
@@ -114,6 +114,7 @@
                 android:textColor="@color/colorAccent"
                 android:textAllCaps="false"
                 android:background="@color/background"
+                android:fontFamily="@font/nokia_pure"
                 android:text="@string/app_version"/>
 
             <TextView
@@ -122,6 +123,7 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:textColor="?android:attr/textColorPrimary"
+                android:fontFamily="@font/nokia_pure"
                 android:background="@color/background"
                 android:textSize="18sp"/>
 
@@ -138,6 +140,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="start"
                 android:padding="16dp"
+                android:fontFamily="@font/nokia_pure"
                 android:textSize="18sp"
                 android:background="@color/background"
                 android:textColor="@color/colorAccent"
@@ -147,6 +150,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
+                android:fontFamily="@font/nokia_pure"
                 android:textColor="?android:attr/textColorPrimary"
                 android:background="@color/background"
                 android:text="@string/my_name"

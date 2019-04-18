@@ -45,6 +45,7 @@
         android:textSize="19sp"
         android:background="@color/background"
         android:layout_marginTop="5dp"
+        android:fontFamily="@font/nokia_pure"
         android:text="@string/current_night_mode"/>
 
 
@@ -56,7 +57,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="35dp"
         android:textSize="18sp"
-        android:typeface="sans"
+        android:fontFamily="@font/nokia_pure"
         android:textColor="?android:attr/textColorPrimary"
         android:background="@color/background"/>
 
@@ -85,6 +86,7 @@
             android:textSize="19sp"
             android:background="@color/background"
             android:layout_marginTop="5dp"
+            android:fontFamily="@font/nokia_pure"
             android:text="@string/battery"/>
 
 
@@ -95,13 +97,14 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
             android:textSize="18sp"
-            android:typeface="sans"
+            android:fontFamily="@font/nokia_pure"
             android:textColor="?android:attr/textColorPrimary"
             android:background="@color/background"
             android:text="@string/apply_auto_battery_theme"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAutoBatteryMode"
+            android:fontFamily="@font/nokia_pure"
             android:text="@string/apply"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -135,6 +138,7 @@
             android:textSize="19sp"
             android:background="@color/background"
             android:layout_marginTop="5dp"
+            android:fontFamily="@font/nokia_pure"
             android:text="@string/followSystem"/>
 
 
@@ -145,13 +149,14 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
             android:textSize="18sp"
-            android:typeface="sans"
+            android:fontFamily="@font/nokia_pure"
             android:textColor="?android:attr/textColorPrimary"
             android:background="@color/background"
             android:text="@string/apply_system_night_mode"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnFollowSystem"
+            android:fontFamily="@font/nokia_pure"
             android:text="@string/apply"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -185,6 +190,7 @@
             android:textColor="@color/colorAccent"
             android:textSize="19sp"
             android:background="@color/background"
+            android:fontFamily="@font/nokia_pure"
             android:layout_marginTop="5dp"
             android:text="@string/light_theme"/>
 
@@ -196,7 +202,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
             android:textSize="18sp"
-            android:typeface="sans"
+            android:fontFamily="@font/nokia_pure"
             android:textColor="?android:attr/textColorPrimary"
             android:background="@color/background"
             android:text="@string/apply_light_theme"/>
@@ -204,6 +210,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnDayMode"
             android:text="@string/apply"
+            android:fontFamily="@font/nokia_pure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
@@ -236,6 +243,7 @@
             android:background="@color/background"
             android:textSize="19sp"
             android:layout_marginTop="5dp"
+            android:fontFamily="@font/nokia_pure"
             android:text="@string/dark_theme"/>
 
 
@@ -248,12 +256,13 @@
             android:textSize="18sp"
             android:textColor="?android:attr/textColorPrimary"
             android:background="@color/background"
-            android:typeface="sans"
+            android:fontFamily="@font/nokia_pure"
             android:text="@string/apply_dark_theme"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnNightMode"
             android:text="@string/apply"
+            android:fontFamily="@font/nokia_pure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"

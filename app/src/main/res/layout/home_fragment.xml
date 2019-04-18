@@ -9,15 +9,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
-
-
-
         <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/background"
             xmlns:tools="http://schemas.android.com/tools">
-
 
 
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -54,7 +50,7 @@
                         android:gravity="center"
                         android:background="@color/background"
                         android:textColor="?android:attr/textColorPrimary"
-                        android:typeface="sans"
+                        android:fontFamily="@font/nokia_pure"
                         android:text="@string/intro"/>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -79,6 +75,7 @@
                         android:textAllCaps="false"
                         android:textColor="@color/colorAccent"
                         android:background="@color/background"
+                        android:fontFamily="@font/nokia_pure"
                         android:textSize="19sp"
                         android:layout_marginTop="5dp"
                         android:text="@string/ai_floating_touch"/>
@@ -92,7 +89,7 @@
                         android:textColor="?android:attr/textColorPrimary"
                         android:textSize="18sp"
                         android:background="@color/background"
-                        android:typeface="sans"
+                        android:fontFamily="@font/nokia_pure"
                         android:text="@string/ai_floating_touch_desc"/>
 
                     <com.google.android.material.button.MaterialButton
@@ -104,6 +101,7 @@
                         android:insetBottom="8dp"
                         android:insetTop="4dp"
                         android:onClick="launchAIFloatingTouch"
+                        android:fontFamily="@font/nokia_pure"
                         android:text="@string/open_app" />
                 </com.google.android.material.card.MaterialCardView>
 
@@ -128,6 +126,7 @@
                         android:textAllCaps="false"
                         android:textColor="@color/colorAccent"
                         android:background="@color/background"
+                        android:fontFamily="@font/nokia_pure"
                         android:textSize="19sp"
                         android:layout_marginTop="5dp"
                         android:text="@string/app_traffic"/>
@@ -141,7 +140,7 @@
                         android:textColor="?android:attr/textColorPrimary"
                         android:textSize="18sp"
                         android:background="@color/background"
-                        android:typeface="sans"
+                        android:fontFamily="@font/nokia_pure"
                         android:text="@string/app_traffic_desc"/>
 
                     <com.google.android.material.button.MaterialButton
@@ -153,6 +152,7 @@
                         android:insetBottom="8dp"
                         android:insetTop="4dp"
                         android:onClick="launchFireWall"
+                        android:fontFamily="@font/nokia_pure"
                         android:text="@string/open_app" />
                 </com.google.android.material.card.MaterialCardView>
 
@@ -178,6 +178,7 @@
                         android:textColor="@color/colorAccent"
                         android:background="@color/background"
                         android:textSize="19sp"
+                        android:fontFamily="@font/nokia_pure"
                         android:layout_marginTop="5dp"
                         android:text="@string/game_assistant"/>
 
@@ -190,7 +191,7 @@
                         android:textColor="?android:attr/textColorPrimary"
                         android:textSize="18sp"
                         android:background="@color/background"
-                        android:typeface="sans"
+                        android:fontFamily="@font/nokia_pure"
                         android:text="@string/game_assistant_desc"/>
 
                     <com.google.android.material.button.MaterialButton
@@ -202,6 +203,7 @@
                         android:insetBottom="8dp"
                         android:insetTop="4dp"
                         android:onClick="launchGameAssistant"
+                        android:fontFamily="@font/nokia_pure"
                         android:text="@string/open_app" />
                 </com.google.android.material.card.MaterialCardView>
 
@@ -229,6 +231,7 @@
                         android:textColor="@color/colorAccent"
                         android:textSize="19sp"
                         android:layout_marginTop="5dp"
+                        android:fontFamily="@font/nokia_pure"
                         android:text="@string/junk_cleaner"/>
 
                     <TextView
@@ -240,7 +243,7 @@
                         android:textSize="18sp"
                         android:background="@color/background"
                         android:textColor="?android:attr/textColorPrimary"
-                        android:typeface="sans"
+                        android:fontFamily="@font/nokia_pure"
                         android:text="@string/juck_cleaner_desc"/>
 
                     <com.google.android.material.button.MaterialButton
@@ -252,6 +255,7 @@
                         android:insetBottom="8dp"
                         android:insetTop="4dp"
                         android:onClick="launchJunkCleaner"
+                        android:fontFamily="@font/nokia_pure"
                         android:text="@string/open_app" />
                 </com.google.android.material.card.MaterialCardView>
 
@@ -276,6 +280,7 @@
                         android:textColor="@color/colorAccent"
                         android:textSize="19sp"
                         android:background="@color/background"
+                        android:fontFamily="@font/nokia_pure"
                         android:layout_marginTop="5dp"
                         android:text="@string/screen_recorder_settings"/>
 
@@ -287,7 +292,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="35dp"
                         android:textSize="18sp"
-                        android:typeface="sans"
+                        android:fontFamily="@font/nokia_pure"
                         android:background="@color/background"
                         android:textColor="?android:attr/textColorPrimary"
                         android:text="@string/screen_recorder_settings_desc"/>
@@ -301,6 +306,7 @@
                         android:insetTop="4dp"
                         android:layout_gravity="bottom|end"
                         android:onClick="launchScreenRecorder"
+                        android:fontFamily="@font/nokia_pure"
                         android:text="@string/open_app"/>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -327,6 +333,7 @@
                         android:background="@color/background"
                         android:textColor="@color/colorAccent"
                         android:textSize="19sp"
+                        android:fontFamily="@font/nokia_pure"
                         android:layout_marginTop="5dp"
                         android:text="@string/smart_boost"/>
 
@@ -338,7 +345,7 @@
                         android:layout_marginTop="35dp"
                         android:textSize="18sp"
                         android:textColor="?android:attr/textColorPrimary"
-                        android:typeface="sans"
+                        android:fontFamily="@font/nokia_pure"
                         android:background="@color/background"
                         android:text="@string/smart_boost_desc"/>
 
@@ -353,6 +360,7 @@
                         android:insetBottom="8dp"
                         android:insetTop="4dp"
                         android:onClick="launchSmartBoost"
+                        android:fontFamily="@font/nokia_pure"
                         android:text="@string/open_app"/>
 
                 </com.google.android.material.card.MaterialCardView>
@@ -379,6 +387,7 @@
                         android:textColor="@color/colorAccent"
                         android:background="@color/background"
                         android:textSize="19sp"
+                        android:fontFamily="@font/nokia_pure"
                         android:layout_marginTop="5dp"
                         android:text="@string/task_manager"/>
 
@@ -389,7 +398,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="35dp"
                         android:textSize="18sp"
-                        android:typeface="sans"
+                        android:fontFamily="@font/nokia_pure"
                         android:textColor="?android:attr/textColorPrimary"
                         android:background="@color/background"
                         android:text="@string/task_manager_desc"/>
@@ -402,6 +411,7 @@
                         android:insetLeft="8dp"
                         android:insetBottom="8dp"
                         android:insetTop="4dp"
+                        android:fontFamily="@font/nokia_pure"
                         android:onClick="launchTaskManager"
                         android:text="@string/open_app" />
                 </com.google.android.material.card.MaterialCardView>
@@ -429,6 +439,7 @@
                         android:textColor="@color/colorAccent"
                         android:textSize="19sp"
                         android:background="@color/background"
+                        android:fontFamily="@font/nokia_pure"
                         android:layout_marginTop="5dp"
                         android:text="@string/virus_scanner"/>
 
@@ -441,7 +452,7 @@
                         android:textColor="?android:attr/textColorPrimary"
                         android:textSize="18sp"
                         android:background="@color/background"
-                        android:typeface="sans"
+                        android:fontFamily="@font/nokia_pure"
                         android:text="@string/virus_scan_desc"/>
 
                     <com.google.android.material.button.MaterialButton
@@ -452,6 +463,7 @@
                         android:insetLeft="8dp"
                         android:insetBottom="8dp"
                         android:insetTop="4dp"
+                        android:fontFamily="@font/nokia_pure"
                         android:onClick="launchVirusScan"
                         android:text="@string/open_app" />
                 </com.google.android.material.card.MaterialCardView>
