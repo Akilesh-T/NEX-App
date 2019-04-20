@@ -84,6 +84,45 @@ public class DeviceFragment extends Fragment {
         build.setText(String.format("%s", buildVer));
         }
         else  build.setText(String.format("%s", "Not found"));
+
+
+        String skuid = "Unknown";
+
+        try {
+            Process process = Runtime.getRuntime().exec("su");
+            InputStream in = process.getInputStream();
+            OutputStream out = process.getOutputStream();
+            String cmd = "[ -r /proc/cda/skuid ] && head -n 1 /proc/cda/skuid";
+            out.write(cmd.getBytes());
+            out.flush();
+            out.close();
+            process.waitFor();
+
+            if (process.exitValue() != 0) {
+                Log.e(TAG,"Failed to obtain root");
+            }
+            else {
+                int ch;
+                StringBuilder sb = new StringBuilder();
+                while((ch = in.read()) != -1)
+                    sb.append((char)ch);
+                skuid = sb.toString();
+            }
+            skuid = skuid.trim();
+
+        } catch (IOException e) {
+            Log.e(TAG, "IOException, " + e.getMessage());
+
+        } catch (InterruptedException e) {
+            Log.e(TAG, "InterruptedException, " + e.getMessage());
+        }
+
+        TextView textView = view.findViewById(R.id.skuid);
+        if(!skuid.isEmpty()){
+            textView.setText(String.format("%s", skuid));
+        }
+        else  textView.setText(String.format("%s", "Not found"));
+
         return view;
     }
 

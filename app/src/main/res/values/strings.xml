@@ -42,5 +42,6 @@
     <string name="followSystem">Use system default</string>
     <string name="apply_system_night_mode">Apply default night mode of the device.</string>
     <string name="current_night_mode">Current Night Mode</string>
+    <string name="skuid">Skuid</string>
 
 </resources>
