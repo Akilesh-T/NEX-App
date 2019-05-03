@@ -9,14 +9,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
-        <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/background"
-            xmlns:tools="http://schemas.android.com/tools">
+            android:background="@color/background">
 
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="16dp"
@@ -95,12 +94,12 @@
                     <com.google.android.material.button.MaterialButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/ai_btn"
                         android:layout_gravity="bottom|end"
                         android:insetRight="8dp"
                         android:insetLeft="8dp"
                         android:insetBottom="8dp"
                         android:insetTop="4dp"
-                        android:onClick="launchAIFloatingTouch"
                         android:fontFamily="@font/nokia_pure"
                         android:text="@string/open_app" />
                 </com.google.android.material.card.MaterialCardView>
@@ -146,12 +145,12 @@
                     <com.google.android.material.button.MaterialButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/fw_btn"
                         android:layout_gravity="bottom|end"
                         android:insetRight="8dp"
                         android:insetLeft="8dp"
                         android:insetBottom="8dp"
                         android:insetTop="4dp"
-                        android:onClick="launchFireWall"
                         android:fontFamily="@font/nokia_pure"
                         android:text="@string/open_app" />
                 </com.google.android.material.card.MaterialCardView>
@@ -197,12 +196,12 @@
                     <com.google.android.material.button.MaterialButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/ga_btn"
                         android:layout_gravity="bottom|end"
                         android:insetRight="8dp"
                         android:insetLeft="8dp"
                         android:insetBottom="8dp"
                         android:insetTop="4dp"
-                        android:onClick="launchGameAssistant"
                         android:fontFamily="@font/nokia_pure"
                         android:text="@string/open_app" />
                 </com.google.android.material.card.MaterialCardView>
@@ -249,12 +248,12 @@
                     <com.google.android.material.button.MaterialButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/jc_btn"
                         android:layout_gravity="bottom|end"
                         android:insetRight="8dp"
                         android:insetLeft="8dp"
                         android:insetBottom="8dp"
                         android:insetTop="4dp"
-                        android:onClick="launchJunkCleaner"
                         android:fontFamily="@font/nokia_pure"
                         android:text="@string/open_app" />
                 </com.google.android.material.card.MaterialCardView>
@@ -300,12 +299,12 @@
                     <com.google.android.material.button.MaterialButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/sr_btn"
                         android:insetRight="8dp"
                         android:insetLeft="8dp"
                         android:insetBottom="8dp"
                         android:insetTop="4dp"
                         android:layout_gravity="bottom|end"
-                        android:onClick="launchScreenRecorder"
                         android:fontFamily="@font/nokia_pure"
                         android:text="@string/open_app"/>
                 </com.google.android.material.card.MaterialCardView>
@@ -351,7 +350,7 @@
 
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/material_button"
+                        android:id="@+id/sb_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom|end"
@@ -359,7 +358,6 @@
                         android:insetLeft="8dp"
                         android:insetBottom="8dp"
                         android:insetTop="4dp"
-                        android:onClick="launchSmartBoost"
                         android:fontFamily="@font/nokia_pure"
                         android:text="@string/open_app"/>
 
@@ -406,13 +404,13 @@
                     <com.google.android.material.button.MaterialButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/tm_btn"
                         android:layout_gravity="bottom|end"
                         android:insetRight="8dp"
                         android:insetLeft="8dp"
                         android:insetBottom="8dp"
                         android:insetTop="4dp"
                         android:fontFamily="@font/nokia_pure"
-                        android:onClick="launchTaskManager"
                         android:text="@string/open_app" />
                 </com.google.android.material.card.MaterialCardView>
 
@@ -458,13 +456,13 @@
                     <com.google.android.material.button.MaterialButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/vs_btn"
                         android:layout_gravity="bottom|end"
                         android:insetRight="8dp"
                         android:insetLeft="8dp"
                         android:insetBottom="8dp"
                         android:insetTop="4dp"
                         android:fontFamily="@font/nokia_pure"
-                        android:onClick="launchVirusScan"
                         android:text="@string/open_app" />
                 </com.google.android.material.card.MaterialCardView>
 
