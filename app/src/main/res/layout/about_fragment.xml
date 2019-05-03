@@ -9,19 +9,16 @@
 
 
 
-    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background"
-        xmlns:tools="http://schemas.android.com/tools">
+        android:background="@color/background">
 
 
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            xmlns:tools="http://schemas.android.com/tools"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_margin="16dp"
             android:background="@color/background"
             android:gravity="center_horizontal"
@@ -99,7 +96,7 @@
         android:layout_marginTop="@dimen/mtrl_card_spacing"
         android:layout_marginRight="@dimen/mtrl_card_spacing"
         tools:ignore="PrivateResource">
-        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <TableLayout
             android:background="@color/background"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
