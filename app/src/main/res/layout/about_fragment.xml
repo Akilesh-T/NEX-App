@@ -31,7 +31,7 @@
         style="@style/Widget.MaterialComponents.CardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="250dp"
+        android:minHeight="150dp"
         app:cardCornerRadius="15dp"
         app:cardBackgroundColor="@color/background"
         android:innerRadius="0dp"
@@ -40,16 +40,16 @@
         android:layout_marginRight="@dimen/mtrl_card_spacing"
         tools:ignore="PrivateResource">
 
-        <ImageView
-            android:id="@+id/desc_image"
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:scaleType="fitXY"
-            android:layout_alignParentTop="true"
-            android:contentDescription="@string/img_desc"
-            android:src="@drawable/logo" />
-
-
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_horizontal"
+            android:fontFamily="@font/nokia_pure"
+            android:text="@string/nokia_extensions"
+            android:textColor="@color/colorAccent"
+            android:textSize="30sp"
+            android:textStyle="bold"/>
 
 
     </com.google.android.material.card.MaterialCardView>
