@@ -1,49 +1,55 @@
 package app.akilesh.nex.fragments
 
-import android.annotation.SuppressLint
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.view.KeyEvent
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.webkit.WebView
-import android.webkit.WebViewClient
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import app.akilesh.nex.R
 
-class HelpFragment : Fragment() {
+class HelpFragment : Fragment(), View.OnClickListener {
+    private lateinit var readMe: Button
+    private lateinit var xda: Button
+    private lateinit var telegramGroup: Button
 
-    @SuppressLint("SetJavaScriptEnabled")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.help_fragment, container, false)
-        val mWebView = view.findViewById<WebView>(R.id.webview)
 
-        // Force links and redirects to open in the WebView instead of in a browser
-        mWebView.webViewClient = WebViewClient()
+        readMe = view.findViewById(R.id.readme)
+        readMe.setOnClickListener(this)
 
-        // Enable Javascript
-        val webSettings = mWebView.settings
-        webSettings.javaScriptEnabled = true
+        xda = view.findViewById(R.id.xda)
+        xda.setOnClickListener(this)
 
-        // REMOTE RESOURCE
-        mWebView.loadUrl("https://github.com/Magisk-Modules-Repo/nokia-extensions/blob/master/README.md#how-tos")
-
-
-        mWebView.setOnKeyListener(View.OnKeyListener { _ , keyCode, event ->
-            if (keyCode == KeyEvent.KEYCODE_BACK
-                    && event.action == MotionEvent.ACTION_UP
-                    && mWebView.canGoBack()) {
-                mWebView.goBack()
-                return@OnKeyListener true
-            }
-            false
-        })
-
+        telegramGroup = view.findViewById(R.id.telegram)
+        telegramGroup.setOnClickListener(this)
 
         return view
     }
 
+    private fun openURL(url: String){
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        startActivity(intent)
+    }
+
+    override fun onClick(v: View?){
+        when(v?.id){
+            R.id.readme -> {
+                openURL("https://github.com/Magisk-Modules-Repo/nokia-extensions/blob/master/README.md#how-tos")
+            }
+
+            R.id.xda -> {
+                openURL("https://forum.xda-developers.com/nokia-7-plus/themes/magisk-module-nokia-extensions-android-t3865438?goto=newpost")
+            }
+
+            R.id.telegram -> {
+                openURL("https://t.me/NokiaExtensions")
+            }
+        }
+    }
 
     interface OnFragmentInteractionListener
 
