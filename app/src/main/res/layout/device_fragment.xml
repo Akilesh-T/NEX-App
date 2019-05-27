@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     android:layout_marginBottom="?actionBarSize"
     android:background="@color/background"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
 
@@ -32,14 +31,9 @@
                 style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="15dp"
-                android:innerRadius="0dp"
-                android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                android:layout_marginTop="@dimen/mtrl_card_spacing"
-                android:layout_marginRight="@dimen/mtrl_card_spacing"
                 android:minHeight="70dp"
                 app:cardBackgroundColor="@color/background"
-                tools:ignore="PrivateResource">
+                app:cardUseCompatPadding="true">
 
                 <TextView
                     style="?android:attr/listSeparatorTextViewStyle"
@@ -72,14 +66,10 @@
                 style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="15dp"
-                android:innerRadius="0dp"
-                android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                android:layout_marginTop="@dimen/mtrl_card_spacing"
-                android:layout_marginRight="@dimen/mtrl_card_spacing"
+                app:cardUseCompatPadding="true"
                 android:minHeight="70dp"
                 app:cardBackgroundColor="@color/background"
-                tools:ignore="PrivateResource">
+                >
 
             <TextView
                 style="?android:attr/listSeparatorTextViewStyle"
@@ -112,14 +102,10 @@
                 style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="15dp"
-                android:innerRadius="0dp"
-                android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                android:layout_marginTop="@dimen/mtrl_card_spacing"
-                android:layout_marginRight="@dimen/mtrl_card_spacing"
+                app:cardUseCompatPadding="true"
                 android:minHeight="70dp"
                 app:cardBackgroundColor="@color/background"
-                tools:ignore="PrivateResource">
+                >
 
                 <TextView
                     style="?android:attr/listSeparatorTextViewStyle"
@@ -153,14 +139,10 @@
                 style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="15dp"
-                android:innerRadius="0dp"
-                android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                android:layout_marginTop="@dimen/mtrl_card_spacing"
-                android:layout_marginRight="@dimen/mtrl_card_spacing"
+                app:cardUseCompatPadding="true"
                 android:minHeight="70dp"
                 app:cardBackgroundColor="@color/background"
-                tools:ignore="PrivateResource">
+                >
 
                 <TextView
                     style="?android:attr/listSeparatorTextViewStyle"
@@ -180,6 +162,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="fill_horizontal"
                     android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginTop="35dp"
                     android:textSize="18sp"
                     android:background="@color/background"
@@ -193,14 +176,10 @@
                 style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="15dp"
-                android:innerRadius="0dp"
-                android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                android:layout_marginTop="@dimen/mtrl_card_spacing"
-                android:layout_marginRight="@dimen/mtrl_card_spacing"
+                app:cardUseCompatPadding="true"
                 android:minHeight="70dp"
                 app:cardBackgroundColor="@color/background"
-                tools:ignore="PrivateResource">
+                >
 
                 <TextView
                     style="?android:attr/listSeparatorTextViewStyle"
@@ -220,6 +199,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="fill_horizontal"
                     android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginTop="35dp"
                     android:textSize="18sp"
                     android:background="@color/background"
@@ -231,8 +211,8 @@
 
             <androidx.legacy.widget.Space
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/mtrl_card_spacing"
-                tools:ignore="PrivateResource" />
+                android:layout_height="8dp"
+                 />
 
 
         </LinearLayout>

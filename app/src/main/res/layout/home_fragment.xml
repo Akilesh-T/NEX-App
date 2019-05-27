@@ -21,29 +21,24 @@
             android:layout_margin="16dp"
             android:background="@color/background"
             android:gravity="center_horizontal"
-            android:orientation="vertical"
-            tools:layout_editor_absoluteX="4dp"
-            tools:layout_editor_absoluteY="50dp">
+            android:orientation="vertical">
 
 
             <com.google.android.material.card.MaterialCardView
                 style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                android:layout_marginTop="@dimen/mtrl_card_spacing"
-                android:layout_marginRight="@dimen/mtrl_card_spacing"
-                android:innerRadius="0dp"
+                app:cardUseCompatPadding="true"
                 android:minHeight="125dp"
                 app:cardBackgroundColor="@color/background"
-                app:cardCornerRadius="15dp"
-                tools:ignore="PrivateResource">
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="fill_horizontal"
                     android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginTop="35dp"
                     android:background="@color/background"
                     android:fontFamily="@font/nokia_pure"
@@ -58,14 +53,10 @@
                 style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                android:layout_marginTop="@dimen/mtrl_card_spacing"
-                android:layout_marginRight="@dimen/mtrl_card_spacing"
-                android:innerRadius="0dp"
+                app:cardUseCompatPadding="true"
                 android:minHeight="190dp"
                 app:cardBackgroundColor="@color/background"
-                app:cardCornerRadius="15dp"
-                tools:ignore="PrivateResource">
+                >
 
                 <TextView
                     style="?android:attr/listSeparatorTextViewStyle"
@@ -84,6 +75,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="fill_horizontal"
                     android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginTop="35dp"
                     android:background="@color/background"
                     android:fontFamily="@font/nokia_pure"
@@ -110,14 +102,10 @@
                 style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                android:layout_marginTop="@dimen/mtrl_card_spacing"
-                android:layout_marginRight="@dimen/mtrl_card_spacing"
-                android:innerRadius="0dp"
+                app:cardUseCompatPadding="true"
                 android:minHeight="125dp"
                 app:cardBackgroundColor="@color/background"
-                app:cardCornerRadius="15dp"
-                tools:ignore="PrivateResource">
+                >
 
                 <TextView
                     style="?android:attr/listSeparatorTextViewStyle"
@@ -136,6 +124,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="fill_horizontal"
                     android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginTop="35dp"
                     android:background="@color/background"
                     android:fontFamily="@font/nokia_pure"
@@ -161,14 +150,10 @@
                 style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                android:layout_marginTop="@dimen/mtrl_card_spacing"
-                android:layout_marginRight="@dimen/mtrl_card_spacing"
-                android:innerRadius="0dp"
+                app:cardUseCompatPadding="true"
                 android:minHeight="125dp"
                 app:cardBackgroundColor="@color/background"
-                app:cardCornerRadius="15dp"
-                tools:ignore="PrivateResource">
+                >
 
                 <TextView
                     style="?android:attr/listSeparatorTextViewStyle"
@@ -187,6 +172,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="fill_horizontal"
                     android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginTop="35dp"
                     android:background="@color/background"
                     android:fontFamily="@font/nokia_pure"
@@ -212,14 +198,10 @@
                 style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                android:layout_marginTop="@dimen/mtrl_card_spacing"
-                android:layout_marginRight="@dimen/mtrl_card_spacing"
-                android:innerRadius="0dp"
+                app:cardUseCompatPadding="true"
                 android:minHeight="125dp"
                 app:cardBackgroundColor="@color/background"
-                app:cardCornerRadius="15dp"
-                tools:ignore="PrivateResource">
+                >
 
                 <TextView
                     style="?android:attr/listSeparatorTextViewStyle"
@@ -238,6 +220,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="fill_horizontal"
                     android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginTop="35dp"
                     android:background="@color/background"
                     android:fontFamily="@font/nokia_pure"
@@ -262,14 +245,10 @@
                 style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                android:layout_marginTop="@dimen/mtrl_card_spacing"
-                android:layout_marginRight="@dimen/mtrl_card_spacing"
-                android:innerRadius="0dp"
+                app:cardUseCompatPadding="true"
                 android:minHeight="120dp"
                 app:cardBackgroundColor="@color/background"
-                app:cardCornerRadius="15dp"
-                tools:ignore="PrivateResource">
+                >
 
                 <TextView
                     style="?android:attr/listSeparatorTextViewStyle"
@@ -289,6 +268,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="fill_horizontal"
                     android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginTop="35dp"
                     android:background="@color/background"
                     android:fontFamily="@font/nokia_pure"
@@ -314,14 +294,10 @@
                 style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                android:layout_marginTop="@dimen/mtrl_card_spacing"
-                android:layout_marginRight="@dimen/mtrl_card_spacing"
-                android:innerRadius="0dp"
+                app:cardUseCompatPadding="true"
                 android:minHeight="195dp"
                 app:cardBackgroundColor="@color/background"
-                app:cardCornerRadius="15dp"
-                tools:ignore="PrivateResource">
+                >
 
 
                 <TextView
@@ -341,6 +317,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="fill_horizontal"
                     android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginTop="35dp"
                     android:background="@color/background"
                     android:fontFamily="@font/nokia_pure"
@@ -368,14 +345,10 @@
                 style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                android:layout_marginTop="@dimen/mtrl_card_spacing"
-                android:layout_marginRight="@dimen/mtrl_card_spacing"
-                android:innerRadius="0dp"
+                app:cardUseCompatPadding="true"
                 android:minHeight="125dp"
                 app:cardBackgroundColor="@color/background"
-                app:cardCornerRadius="15dp"
-                tools:ignore="PrivateResource">
+                >
 
                 <TextView
                     style="?android:attr/listSeparatorTextViewStyle"
@@ -394,6 +367,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="fill_horizontal"
                     android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginTop="35dp"
                     android:background="@color/background"
                     android:fontFamily="@font/nokia_pure"
@@ -419,14 +393,10 @@
                 style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                android:layout_marginTop="@dimen/mtrl_card_spacing"
-                android:layout_marginRight="@dimen/mtrl_card_spacing"
-                android:innerRadius="0dp"
+                app:cardUseCompatPadding="true"
                 android:minHeight="125dp"
                 app:cardBackgroundColor="@color/background"
-                app:cardCornerRadius="15dp"
-                tools:ignore="PrivateResource">
+                >
 
                 <TextView
                     style="?android:attr/listSeparatorTextViewStyle"
@@ -445,6 +415,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="fill_horizontal"
                     android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginTop="35dp"
                     android:background="@color/background"
                     android:fontFamily="@font/nokia_pure"
@@ -467,8 +438,8 @@
 
             <androidx.legacy.widget.Space
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/mtrl_card_spacing"
-                tools:ignore="PrivateResource" />
+                android:layout_height="8dp"
+                 />
 
         </LinearLayout>
 
