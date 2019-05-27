@@ -12,6 +12,7 @@ import app.akilesh.nex.fragments.ThemeFragment
 
 
 import android.content.res.Configuration
+import android.os.Build
 import android.os.Bundle
 import android.preference.PreferenceManager
 
@@ -22,12 +23,19 @@ import java.util.Objects
 import android.view.View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
 import android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
 import android.view.WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS
+import android.widget.Toast
 
 
 class MainActivity : AppCompatActivity(), HomeFragment.OnFragmentInteractionListener, AboutFragment.OnFragmentInteractionListener, HelpFragment.OnFragmentInteractionListener, ThemeFragment.OnFragmentInteractionListener, DeviceFragment.OnFragmentInteractionListener {
     private var currentNightMode: Int = 0
+    private val brand: String = Build.BRAND
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        if(brand != "Nokia") {
+            Toast.makeText(this, "This app is only for Nokia phones!", Toast.LENGTH_SHORT).show()
+            this.finishAffinity()
+        }
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
