@@ -16,6 +16,12 @@ import app.akilesh.nex.R
 class ThemeFragment : Fragment() {
     private val currentNightMode = arrayOf("Use system default", "Light", "Dark", "Set by Battery saver")
 
+    private fun relaunch(){
+        val intent = Intent(Intent.ACTION_MAIN)
+        intent.setClassName("app.akilesh.nex", "app.akilesh.nex.SplashActivity")
+        startActivity(intent)
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.theme_fragment, container, false)
         val sharedPref = PreferenceManager.getDefaultSharedPreferences(activity as Context?)
@@ -36,9 +42,7 @@ class ThemeFragment : Fragment() {
             val editor = sharedPref.edit()
             editor.putInt("ThemePrefs", 3)
             editor.apply()
-            val intent = Intent(Intent.ACTION_MAIN)
-            intent.setClassName("app.akilesh.nex", "app.akilesh.nex.SplashActivity")
-            startActivity(intent)
+            relaunch()
         }
 
         btnFollowSystem.setOnClickListener {
@@ -46,9 +50,7 @@ class ThemeFragment : Fragment() {
             val editor = sharedPref.edit()
             editor.putInt("ThemePrefs", -1)
             editor.apply()
-            val intent = Intent(Intent.ACTION_MAIN)
-            intent.setClassName("app.akilesh.nex", "app.akilesh.nex.SplashActivity")
-            startActivity(intent)
+            relaunch()
         }
 
         btnNightMode.setOnClickListener {
@@ -56,9 +58,7 @@ class ThemeFragment : Fragment() {
             val editor = sharedPref.edit()
             editor.putInt("ThemePrefs", 2)
             editor.apply()
-            val intent = Intent(Intent.ACTION_MAIN)
-            intent.setClassName("app.akilesh.nex", "app.akilesh.nex.SplashActivity")
-            startActivity(intent)
+            relaunch()
         }
 
         btnDayMode.setOnClickListener {
@@ -66,9 +66,7 @@ class ThemeFragment : Fragment() {
             val editor = sharedPref.edit()
             editor.putInt("ThemePrefs", 1)
             editor.apply()
-            val intent = Intent(Intent.ACTION_MAIN)
-            intent.setClassName("app.akilesh.nex", "app.akilesh.nex.SplashActivity")
-            startActivity(intent)
+            relaunch()
         }
         return view
 
