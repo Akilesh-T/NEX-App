@@ -7,12 +7,14 @@
     android:background="@color/background"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<androidx.core.widget.NestedScrollView
+
+    <androidx.core.widget.NestedScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
 
-<LinearLayout
+
+        <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
@@ -156,15 +158,15 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnFollowSystem"
-            android:fontFamily="@font/nokia_pure"
-            android:text="@string/apply"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:insetRight="8dp"
+            android:fontFamily="@font/nokia_pure"
             android:insetLeft="8dp"
+            android:insetTop="4dp"
+            android:insetRight="8dp"
             android:insetBottom="8dp"
-            android:insetTop="4dp" />
+            android:text="@string/apply" />
 
     </com.google.android.material.card.MaterialCardView>
 

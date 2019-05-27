@@ -9,471 +9,470 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
-        <androidx.core.widget.NestedScrollView
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/background">
+            android:layout_margin="16dp"
+            android:background="@color/background"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="4dp"
+            tools:layout_editor_absoluteY="50dp">
 
 
-            <LinearLayout
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="16dp"
-                android:gravity="center_horizontal"
-                android:orientation="vertical"
-                android:background="@color/background"
-                tools:layout_editor_absoluteX="4dp"
-                tools:layout_editor_absoluteY="50dp">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mtrl_card_spacing"
+                android:layout_marginTop="@dimen/mtrl_card_spacing"
+                android:layout_marginRight="@dimen/mtrl_card_spacing"
+                android:innerRadius="0dp"
+                android:minHeight="125dp"
+                app:cardBackgroundColor="@color/background"
+                app:cardCornerRadius="15dp"
+                tools:ignore="PrivateResource">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="fill_horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@color/background"
+                    android:fontFamily="@font/nokia_pure"
+                    android:gravity="center"
+                    android:text="@string/intro"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="18sp" />
+            </com.google.android.material.card.MaterialCardView>
 
 
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.MaterialComponents.CardView"
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.MaterialComponents.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mtrl_card_spacing"
+                android:layout_marginTop="@dimen/mtrl_card_spacing"
+                android:layout_marginRight="@dimen/mtrl_card_spacing"
+                android:innerRadius="0dp"
+                android:minHeight="190dp"
+                app:cardBackgroundColor="@color/background"
+                app:cardCornerRadius="15dp"
+                tools:ignore="PrivateResource">
+
+                <TextView
+                    style="?android:attr/listSeparatorTextViewStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="15dp"
-                    android:innerRadius="0dp"
-                    android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                    android:layout_marginTop="@dimen/mtrl_card_spacing"
-                    android:layout_marginRight="@dimen/mtrl_card_spacing"
-                    app:cardBackgroundColor="@color/background"
-                    android:minHeight="125dp"
-                    tools:ignore="PrivateResource">
+                    android:layout_marginTop="5dp"
+                    android:background="@color/background"
+                    android:fontFamily="@font/nokia_pure"
+                    android:text="@string/ai_floating_touch"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="19sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="fill_horizontal"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="35dp"
-                        android:textSize="18sp"
-                        android:gravity="center"
-                        android:background="@color/background"
-                        android:textColor="?android:attr/textColorPrimary"
-                        android:fontFamily="@font/nokia_pure"
-                        android:text="@string/intro"/>
-                </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@color/background"
+                    android:fontFamily="@font/nokia_pure"
+                    android:text="@string/ai_floating_touch_desc"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/ai_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:fontFamily="@font/nokia_pure"
+                    android:insetLeft="8dp"
+                    android:insetTop="4dp"
+                    android:insetRight="8dp"
+                    android:insetBottom="8dp"
+                    android:text="@string/open_app" />
+
+            </com.google.android.material.card.MaterialCardView>
 
 
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.MaterialComponents.CardView"
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.MaterialComponents.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mtrl_card_spacing"
+                android:layout_marginTop="@dimen/mtrl_card_spacing"
+                android:layout_marginRight="@dimen/mtrl_card_spacing"
+                android:innerRadius="0dp"
+                android:minHeight="125dp"
+                app:cardBackgroundColor="@color/background"
+                app:cardCornerRadius="15dp"
+                tools:ignore="PrivateResource">
+
+                <TextView
+                    style="?android:attr/listSeparatorTextViewStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="15dp"
-                    android:innerRadius="0dp"
-                    android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                    android:layout_marginTop="@dimen/mtrl_card_spacing"
-                    android:layout_marginRight="@dimen/mtrl_card_spacing"
-                    android:minHeight="190dp"
-                    app:cardBackgroundColor="@color/background"
-                    tools:ignore="PrivateResource">
+                    android:layout_marginTop="5dp"
+                    android:background="@color/background"
+                    android:fontFamily="@font/nokia_pure"
+                    android:text="@string/app_traffic"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="19sp" />
 
-                    <TextView
-                        style="?android:attr/listSeparatorTextViewStyle"
-                        android:layout_height="wrap_content"
-                        android:layout_width="match_parent"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorAccent"
-                        android:background="@color/background"
-                        android:fontFamily="@font/nokia_pure"
-                        android:textSize="19sp"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/ai_floating_touch"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@color/background"
+                    android:fontFamily="@font/nokia_pure"
+                    android:text="@string/app_traffic_desc"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="18sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="fill_horizontal"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="35dp"
-                        android:textColor="?android:attr/textColorPrimary"
-                        android:textSize="18sp"
-                        android:background="@color/background"
-                        android:fontFamily="@font/nokia_pure"
-                        android:text="@string/ai_floating_touch_desc"/>
-
-                    <com.google.android.material.button.MaterialButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/ai_btn"
-                        android:layout_gravity="bottom|end"
-                        android:insetRight="8dp"
-                        android:insetLeft="8dp"
-                        android:insetBottom="8dp"
-                        android:insetTop="4dp"
-                        android:fontFamily="@font/nokia_pure"
-                        android:text="@string/open_app" />
-                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/fw_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:fontFamily="@font/nokia_pure"
+                    android:insetLeft="8dp"
+                    android:insetTop="4dp"
+                    android:insetRight="8dp"
+                    android:insetBottom="8dp"
+                    android:text="@string/open_app" />
+            </com.google.android.material.card.MaterialCardView>
 
 
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.MaterialComponents.CardView"
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.MaterialComponents.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mtrl_card_spacing"
+                android:layout_marginTop="@dimen/mtrl_card_spacing"
+                android:layout_marginRight="@dimen/mtrl_card_spacing"
+                android:innerRadius="0dp"
+                android:minHeight="125dp"
+                app:cardBackgroundColor="@color/background"
+                app:cardCornerRadius="15dp"
+                tools:ignore="PrivateResource">
+
+                <TextView
+                    style="?android:attr/listSeparatorTextViewStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="15dp"
-                    android:innerRadius="0dp"
-                    android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                    android:layout_marginTop="@dimen/mtrl_card_spacing"
-                    android:layout_marginRight="@dimen/mtrl_card_spacing"
-                    android:minHeight="125dp"
-                    app:cardBackgroundColor="@color/background"
-                    tools:ignore="PrivateResource">
+                    android:layout_marginTop="5dp"
+                    android:background="@color/background"
+                    android:fontFamily="@font/nokia_pure"
+                    android:text="@string/game_assistant"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="19sp" />
 
-                    <TextView
-                        style="?android:attr/listSeparatorTextViewStyle"
-                        android:layout_height="wrap_content"
-                        android:layout_width="match_parent"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorAccent"
-                        android:background="@color/background"
-                        android:fontFamily="@font/nokia_pure"
-                        android:textSize="19sp"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/app_traffic"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@color/background"
+                    android:fontFamily="@font/nokia_pure"
+                    android:text="@string/game_assistant_desc"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="18sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="fill_horizontal"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="35dp"
-                        android:textColor="?android:attr/textColorPrimary"
-                        android:textSize="18sp"
-                        android:background="@color/background"
-                        android:fontFamily="@font/nokia_pure"
-                        android:text="@string/app_traffic_desc"/>
-
-                    <com.google.android.material.button.MaterialButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/fw_btn"
-                        android:layout_gravity="bottom|end"
-                        android:insetRight="8dp"
-                        android:insetLeft="8dp"
-                        android:insetBottom="8dp"
-                        android:insetTop="4dp"
-                        android:fontFamily="@font/nokia_pure"
-                        android:text="@string/open_app" />
-                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/ga_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:fontFamily="@font/nokia_pure"
+                    android:insetLeft="8dp"
+                    android:insetTop="4dp"
+                    android:insetRight="8dp"
+                    android:insetBottom="8dp"
+                    android:text="@string/open_app" />
+            </com.google.android.material.card.MaterialCardView>
 
 
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.MaterialComponents.CardView"
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.MaterialComponents.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mtrl_card_spacing"
+                android:layout_marginTop="@dimen/mtrl_card_spacing"
+                android:layout_marginRight="@dimen/mtrl_card_spacing"
+                android:innerRadius="0dp"
+                android:minHeight="125dp"
+                app:cardBackgroundColor="@color/background"
+                app:cardCornerRadius="15dp"
+                tools:ignore="PrivateResource">
+
+                <TextView
+                    style="?android:attr/listSeparatorTextViewStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="15dp"
-                    android:innerRadius="0dp"
-                    android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                    android:layout_marginTop="@dimen/mtrl_card_spacing"
-                    android:layout_marginRight="@dimen/mtrl_card_spacing"
-                    android:minHeight="125dp"
-                    app:cardBackgroundColor="@color/background"
-                    tools:ignore="PrivateResource">
+                    android:layout_marginTop="5dp"
+                    android:background="@color/background"
+                    android:fontFamily="@font/nokia_pure"
+                    android:text="@string/junk_cleaner"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="19sp" />
 
-                    <TextView
-                        style="?android:attr/listSeparatorTextViewStyle"
-                        android:layout_height="wrap_content"
-                        android:layout_width="match_parent"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorAccent"
-                        android:background="@color/background"
-                        android:textSize="19sp"
-                        android:fontFamily="@font/nokia_pure"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/game_assistant"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="fill_horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@color/background"
+                    android:fontFamily="@font/nokia_pure"
+                    android:text="@string/juck_cleaner_desc"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="18sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="fill_horizontal"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="35dp"
-                        android:textColor="?android:attr/textColorPrimary"
-                        android:textSize="18sp"
-                        android:background="@color/background"
-                        android:fontFamily="@font/nokia_pure"
-                        android:text="@string/game_assistant_desc"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/jc_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:fontFamily="@font/nokia_pure"
+                    android:insetLeft="8dp"
+                    android:insetTop="4dp"
+                    android:insetRight="8dp"
+                    android:insetBottom="8dp"
+                    android:text="@string/open_app" />
+            </com.google.android.material.card.MaterialCardView>
 
-                    <com.google.android.material.button.MaterialButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/ga_btn"
-                        android:layout_gravity="bottom|end"
-                        android:insetRight="8dp"
-                        android:insetLeft="8dp"
-                        android:insetBottom="8dp"
-                        android:insetTop="4dp"
-                        android:fontFamily="@font/nokia_pure"
-                        android:text="@string/open_app" />
-                </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.MaterialComponents.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mtrl_card_spacing"
+                android:layout_marginTop="@dimen/mtrl_card_spacing"
+                android:layout_marginRight="@dimen/mtrl_card_spacing"
+                android:innerRadius="0dp"
+                android:minHeight="120dp"
+                app:cardBackgroundColor="@color/background"
+                app:cardCornerRadius="15dp"
+                tools:ignore="PrivateResource">
 
-
-
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.MaterialComponents.CardView"
+                <TextView
+                    style="?android:attr/listSeparatorTextViewStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="15dp"
-                    android:innerRadius="0dp"
-                    android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                    android:layout_marginTop="@dimen/mtrl_card_spacing"
-                    android:layout_marginRight="@dimen/mtrl_card_spacing"
-                    android:minHeight="125dp"
-                    app:cardBackgroundColor="@color/background"
-                    tools:ignore="PrivateResource">
+                    android:layout_marginTop="5dp"
+                    android:background="@color/background"
+                    android:fontFamily="@font/nokia_pure"
+                    android:text="@string/screen_recorder_settings"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="19sp" />
 
-                    <TextView
-                        style="?android:attr/listSeparatorTextViewStyle"
-                        android:layout_height="wrap_content"
-                        android:layout_width="match_parent"
-                        android:textAllCaps="false"
-                        android:background="@color/background"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="19sp"
-                        android:layout_marginTop="5dp"
-                        android:fontFamily="@font/nokia_pure"
-                        android:text="@string/junk_cleaner"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="fill_horizontal"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="35dp"
-                        android:textSize="18sp"
-                        android:background="@color/background"
-                        android:textColor="?android:attr/textColorPrimary"
-                        android:fontFamily="@font/nokia_pure"
-                        android:text="@string/juck_cleaner_desc"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@color/background"
+                    android:fontFamily="@font/nokia_pure"
+                    android:text="@string/screen_recorder_settings_desc"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="18sp" />
 
-                    <com.google.android.material.button.MaterialButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/jc_btn"
-                        android:layout_gravity="bottom|end"
-                        android:insetRight="8dp"
-                        android:insetLeft="8dp"
-                        android:insetBottom="8dp"
-                        android:insetTop="4dp"
-                        android:fontFamily="@font/nokia_pure"
-                        android:text="@string/open_app" />
-                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sr_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:fontFamily="@font/nokia_pure"
+                    android:insetLeft="8dp"
+                    android:insetTop="4dp"
+                    android:insetRight="8dp"
+                    android:insetBottom="8dp"
+                    android:text="@string/open_app" />
+            </com.google.android.material.card.MaterialCardView>
 
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.MaterialComponents.CardView"
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.MaterialComponents.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mtrl_card_spacing"
+                android:layout_marginTop="@dimen/mtrl_card_spacing"
+                android:layout_marginRight="@dimen/mtrl_card_spacing"
+                android:innerRadius="0dp"
+                android:minHeight="195dp"
+                app:cardBackgroundColor="@color/background"
+                app:cardCornerRadius="15dp"
+                tools:ignore="PrivateResource">
+
+
+                <TextView
+                    style="?android:attr/listSeparatorTextViewStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="15dp"
-                    android:innerRadius="0dp"
-                    android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                    android:layout_marginTop="@dimen/mtrl_card_spacing"
-                    android:layout_marginRight="@dimen/mtrl_card_spacing"
-                    app:cardBackgroundColor="@color/background"
-                    android:minHeight="120dp"
-                    tools:ignore="PrivateResource">
+                    android:layout_marginTop="5dp"
+                    android:background="@color/background"
+                    android:fontFamily="@font/nokia_pure"
+                    android:text="@string/smart_boost"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="19sp" />
 
-                    <TextView
-                        style="?android:attr/listSeparatorTextViewStyle"
-                        android:layout_height="wrap_content"
-                        android:layout_width="match_parent"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="19sp"
-                        android:background="@color/background"
-                        android:fontFamily="@font/nokia_pure"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/screen_recorder_settings"/>
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="fill_horizontal"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="35dp"
-                        android:textSize="18sp"
-                        android:fontFamily="@font/nokia_pure"
-                        android:background="@color/background"
-                        android:textColor="?android:attr/textColorPrimary"
-                        android:text="@string/screen_recorder_settings_desc"/>
-
-                    <com.google.android.material.button.MaterialButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/sr_btn"
-                        android:insetRight="8dp"
-                        android:insetLeft="8dp"
-                        android:insetBottom="8dp"
-                        android:insetTop="4dp"
-                        android:layout_gravity="bottom|end"
-                        android:fontFamily="@font/nokia_pure"
-                        android:text="@string/open_app"/>
-                </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="fill_horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@color/background"
+                    android:fontFamily="@font/nokia_pure"
+                    android:text="@string/smart_boost_desc"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="18sp" />
 
 
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.MaterialComponents.CardView"
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sb_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:fontFamily="@font/nokia_pure"
+                    android:insetLeft="8dp"
+                    android:insetTop="4dp"
+                    android:insetRight="8dp"
+                    android:insetBottom="8dp"
+                    android:text="@string/open_app" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.MaterialComponents.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mtrl_card_spacing"
+                android:layout_marginTop="@dimen/mtrl_card_spacing"
+                android:layout_marginRight="@dimen/mtrl_card_spacing"
+                android:innerRadius="0dp"
+                android:minHeight="125dp"
+                app:cardBackgroundColor="@color/background"
+                app:cardCornerRadius="15dp"
+                tools:ignore="PrivateResource">
+
+                <TextView
+                    style="?android:attr/listSeparatorTextViewStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="15dp"
-                    android:innerRadius="0dp"
-                    android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                    android:layout_marginTop="@dimen/mtrl_card_spacing"
-                    android:layout_marginRight="@dimen/mtrl_card_spacing"
-                    android:minHeight="195dp"
-                    app:cardBackgroundColor="@color/background"
-                    tools:ignore="PrivateResource">
+                    android:layout_marginTop="5dp"
+                    android:background="@color/background"
+                    android:fontFamily="@font/nokia_pure"
+                    android:text="@string/task_manager"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="19sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@color/background"
+                    android:fontFamily="@font/nokia_pure"
+                    android:text="@string/task_manager_desc"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/tm_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:fontFamily="@font/nokia_pure"
+                    android:insetLeft="8dp"
+                    android:insetTop="4dp"
+                    android:insetRight="8dp"
+                    android:insetBottom="8dp"
+                    android:text="@string/open_app" />
+            </com.google.android.material.card.MaterialCardView>
 
 
-                    <TextView
-                        style="?android:attr/listSeparatorTextViewStyle"
-                        android:layout_height="wrap_content"
-                        android:layout_width="match_parent"
-                        android:textAllCaps="false"
-                        android:background="@color/background"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="19sp"
-                        android:fontFamily="@font/nokia_pure"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/smart_boost"/>
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.MaterialComponents.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mtrl_card_spacing"
+                android:layout_marginTop="@dimen/mtrl_card_spacing"
+                android:layout_marginRight="@dimen/mtrl_card_spacing"
+                android:innerRadius="0dp"
+                android:minHeight="125dp"
+                app:cardBackgroundColor="@color/background"
+                app:cardCornerRadius="15dp"
+                tools:ignore="PrivateResource">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="fill_horizontal"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="35dp"
-                        android:textSize="18sp"
-                        android:textColor="?android:attr/textColorPrimary"
-                        android:fontFamily="@font/nokia_pure"
-                        android:background="@color/background"
-                        android:text="@string/smart_boost_desc"/>
-
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/sb_btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom|end"
-                        android:insetRight="8dp"
-                        android:insetLeft="8dp"
-                        android:insetBottom="8dp"
-                        android:insetTop="4dp"
-                        android:fontFamily="@font/nokia_pure"
-                        android:text="@string/open_app"/>
-
-                </com.google.android.material.card.MaterialCardView>
-
-
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.MaterialComponents.CardView"
+                <TextView
+                    style="?android:attr/listSeparatorTextViewStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="15dp"
-                    android:innerRadius="0dp"
-                    android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                    android:layout_marginTop="@dimen/mtrl_card_spacing"
-                    android:layout_marginRight="@dimen/mtrl_card_spacing"
-                    android:minHeight="125dp"
-                    app:cardBackgroundColor="@color/background"
-                    tools:ignore="PrivateResource">
+                    android:layout_marginTop="5dp"
+                    android:background="@color/background"
+                    android:fontFamily="@font/nokia_pure"
+                    android:text="@string/virus_scanner"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="19sp" />
 
-                    <TextView
-                        style="?android:attr/listSeparatorTextViewStyle"
-                        android:layout_height="wrap_content"
-                        android:layout_width="match_parent"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorAccent"
-                        android:background="@color/background"
-                        android:textSize="19sp"
-                        android:fontFamily="@font/nokia_pure"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/task_manager"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="fill_horizontal"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="35dp"
-                        android:textSize="18sp"
-                        android:fontFamily="@font/nokia_pure"
-                        android:textColor="?android:attr/textColorPrimary"
-                        android:background="@color/background"
-                        android:text="@string/task_manager_desc"/>
-
-                    <com.google.android.material.button.MaterialButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/tm_btn"
-                        android:layout_gravity="bottom|end"
-                        android:insetRight="8dp"
-                        android:insetLeft="8dp"
-                        android:insetBottom="8dp"
-                        android:insetTop="4dp"
-                        android:fontFamily="@font/nokia_pure"
-                        android:text="@string/open_app" />
-                </com.google.android.material.card.MaterialCardView>
-
-
-
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.MaterialComponents.CardView"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="15dp"
-                    android:innerRadius="0dp"
-                    android:layout_marginLeft="@dimen/mtrl_card_spacing"
-                    android:layout_marginTop="@dimen/mtrl_card_spacing"
-                    android:layout_marginRight="@dimen/mtrl_card_spacing"
-                    app:cardBackgroundColor="@color/background"
-                    android:minHeight="125dp"
-                    tools:ignore="PrivateResource">
+                    android:layout_gravity="fill_horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@color/background"
+                    android:fontFamily="@font/nokia_pure"
+                    android:text="@string/virus_scan_desc"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="18sp" />
 
-                    <TextView
-                        style="?android:attr/listSeparatorTextViewStyle"
-                        android:layout_height="wrap_content"
-                        android:layout_width="match_parent"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="19sp"
-                        android:background="@color/background"
-                        android:fontFamily="@font/nokia_pure"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/virus_scanner"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/vs_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:fontFamily="@font/nokia_pure"
+                    android:insetLeft="8dp"
+                    android:insetTop="4dp"
+                    android:insetRight="8dp"
+                    android:insetBottom="8dp"
+                    android:text="@string/open_app" />
+            </com.google.android.material.card.MaterialCardView>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="fill_horizontal"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="35dp"
-                        android:textColor="?android:attr/textColorPrimary"
-                        android:textSize="18sp"
-                        android:background="@color/background"
-                        android:fontFamily="@font/nokia_pure"
-                        android:text="@string/virus_scan_desc"/>
+            <androidx.legacy.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mtrl_card_spacing"
+                tools:ignore="PrivateResource" />
 
-                    <com.google.android.material.button.MaterialButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/vs_btn"
-                        android:layout_gravity="bottom|end"
-                        android:insetRight="8dp"
-                        android:insetLeft="8dp"
-                        android:insetBottom="8dp"
-                        android:insetTop="4dp"
-                        android:fontFamily="@font/nokia_pure"
-                        android:text="@string/open_app" />
-                </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
 
-                <androidx.legacy.widget.Space
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/mtrl_card_spacing"
-                    tools:ignore="PrivateResource" />
-
-            </LinearLayout>
-
-        </androidx.core.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
