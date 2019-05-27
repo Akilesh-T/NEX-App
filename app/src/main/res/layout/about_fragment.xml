@@ -54,35 +54,6 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-    <com.google.android.material.card.MaterialCardView
-        style="@style/Widget.MaterialComponents.CardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="100dp"
-        app:cardBackgroundColor="@color/background"
-        app:cardCornerRadius="15dp"
-        android:innerRadius="0dp"
-        android:layout_marginLeft="@dimen/mtrl_card_spacing"
-        android:layout_marginTop="@dimen/mtrl_card_spacing"
-        android:layout_marginRight="@dimen/mtrl_card_spacing"
-        tools:ignore="PrivateResource">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="fill_horizontal"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="12dp"
-            android:textSize="18sp"
-            android:textColor="?android:attr/textColorPrimary"
-            android:fontFamily="@font/nokia_pure"
-            android:background="@color/background"
-            android:text="@string/about"/>
-
-
-
-    </com.google.android.material.card.MaterialCardView>
-
 
     <com.google.android.material.card.MaterialCardView
         style="@style/Widget.MaterialComponents.CardView"
