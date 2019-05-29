@@ -3,23 +3,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/menu_home"
-        android:icon="@drawable/home"
+        android:icon="@drawable/ic_home"
         android:title="@string/home" />
 
     <item android:id="@+id/menu_help"
         android:title="@string/help"
-        android:icon="@drawable/help" />
+        android:icon="@drawable/ic_help" />
 
     <item android:id="@+id/device_info"
         android:title="@string/device"
-        android:icon="@drawable/smartphone" />
+        android:icon="@drawable/ic_device_info" />
 
     <item android:id="@+id/menu_invert"
         android:title="@string/invert_theme"
-        android:icon="@drawable/invert" />
+        android:icon="@drawable/ic_theme" />
 
     <item android:id="@+id/menu_info"
         android:title="@string/info"
-        android:icon="@drawable/info" />
+        android:icon="@drawable/ic_info" />
 
 </menu>
