@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:paddingTop="8.0dip"
+        android:paddingBottom="72.0dip"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Cards"
+                >
+
+                <TextView
+                    style="@style/Text"
+                    android:text="@string/intro" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <FrameLayout
+                android:clipChildren="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16.0dip">
+
+                <TextView
+                    style="@style/CardHeaders"
+                    app:drawableStartCompat="@drawable/ic_android"
+                    android:text="@string/app_version" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Cards">
+                    <TextView
+                        style="@style/Text"
+                        android:id="@+id/version"/>
+                </com.google.android.material.card.MaterialCardView>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16.0dip"
+                android:clipChildren="false">
+
+                <TextView
+                    style="@style/CardHeaders"
+                    app:drawableStartCompat="@drawable/ic_magisk"
+                    android:text="@string/nex_version" />
+
+                <com.google.android.material.card.MaterialCardView style="@style/Cards">
+
+                    <TextView
+                        android:id="@+id/nex_version"
+                        style="@style/Text" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:clipChildren="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16.0dip">
+
+                <TextView
+                    style="@style/CardHeaders"
+                    app:drawableStartCompat="@drawable/ic_build"
+                    android:text="@string/made_by" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Cards">
+                    <TextView
+                        style="@style/Text"
+                        android:text="@string/my_name"/>
+                </com.google.android.material.card.MaterialCardView>
+
+            </FrameLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

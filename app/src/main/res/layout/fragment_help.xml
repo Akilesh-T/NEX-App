@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:paddingTop="8.0dip"
+        android:paddingBottom="72.0dip"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:clipChildren="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16.0dip">
+
+                <TextView
+                    style="@style/CardHeaders"
+                    android:text="@string/doc" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Cards"
+                    android:clickable="false">
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Button"
+                        app:icon="@drawable/ic_readme"
+                        android:id="@+id/readme"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/readme"/>
+
+                </com.google.android.material.card.MaterialCardView>
+            </FrameLayout>
+
+            <FrameLayout
+            android:clipChildren="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16.0dip">
+
+            <TextView
+                style="@style/CardHeaders"
+                android:text="@string/support" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Cards"
+                android:clickable="false">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Button"
+                        app:icon="@drawable/ic_xda"
+                        android:id="@+id/xda"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/xda"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Button"
+                        app:icon="@drawable/ic_telegram_group"
+                        android:id="@+id/telegram"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/telegram_group"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+        </FrameLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

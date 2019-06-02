@@ -8,18 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 
-import java.io.IOException
 import androidx.fragment.app.Fragment
 import app.akilesh.nex.R
-
-import android.content.ContentValues.TAG
+import java.io.*
 
 
 class DeviceFragment : Fragment() {
 
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.device_fragment, container, false)
+        val view = inflater.inflate(R.layout.fragment_device, container, false)
 
         val brand = Build.BRAND
         val deviceBrand = view.findViewById<TextView>(R.id.brand)
@@ -34,89 +31,155 @@ class DeviceFragment : Fragment() {
         deviceCodeName.text = String.format("%s", code)
 
         var buildVer = "Unknown"
+        if(File("/proc/fver").exists()) {
+            try {
+                val process = Runtime.getRuntime().exec("su")
+                val `in` = process.inputStream
+                val out = process.outputStream
+                val cmd = "[ -r /proc/fver ] && head -n 1 /proc/fver"
+                out.write(cmd.toByteArray())
+                out.flush()
+                out.close()
+                process.waitFor()
 
-        try {
-            val process = Runtime.getRuntime().exec("su")
-            val `in` = process.inputStream
-            val out = process.outputStream
-            val cmd = "[ -r /proc/fver ] && head -n 1 /proc/fver"
-            out.write(cmd.toByteArray())
-            out.flush()
-            out.close()
-            process.waitFor()
+                if (process.exitValue() != 0) {
+                    Log.e(TAG, "Failed to obtain root")
 
-            if (process.exitValue() != 0) {
-                Log.e(TAG, "Failed to obtain root")
-            } else {
-                var ch: Int
-                val sb = StringBuilder()
-                while (`in`.read().let { ch = it; it != -1 })
-                    sb.append(ch.toChar())
-                buildVer = sb.toString().substring(4, 23)
+                    try {
+                        val p = Runtime.getRuntime().exec("getprop ro.build.version.incremental")
+
+                        val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader?)
+                        buildVer = stdInput.readLine().trim()
+
+                    } catch (e: IOException) {
+                        e.printStackTrace()
+                    }
+                }
+
+                else {
+                    var ch: Int
+                    val sb = StringBuilder()
+                    while (`in`.read().let { ch = it; it != -1 })
+                        sb.append(ch.toChar())
+                    buildVer = sb.toString().substring(4, 23)
+                }
+                buildVer = buildVer.trim { it <= ' ' }
+
+            } catch (e: IOException) {
+                Log.e(TAG, "IOException, " + e.message)
+            } catch (e: InterruptedException) {
+                Log.e(TAG, "InterruptedException, " + e.message)
             }
-            buildVer = buildVer.trim { it <= ' ' }
+        }
 
-        } catch (e: IOException) {
-            Log.e(TAG, "IOException, " + e.message)
+        else {
+            Log.e(TAG, "/proc/fver doesn't exist")
+            try {
+                val p = Runtime.getRuntime().exec("getprop ro.build.version.incremental")
 
-        } catch (e: InterruptedException) {
-            Log.e(TAG, "InterruptedException, " + e.message)
+                val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader?)
+                buildVer = stdInput.readLine().trim()
+
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
         }
 
         val build = view.findViewById<TextView>(R.id.buildVersion)
-        if (buildVer.isNotEmpty()) {
-            build.text = String.format("%s", buildVer)
-        } else
-            build.text = String.format("%s", "Not found")
+        build.text = String.format("%s", buildVer)
 
 
         var skuid = "Unknown"
+        if(File("/proc/cda/skuid").exists()) {
+            try {
+                val process = Runtime.getRuntime().exec("su")
+                val `in` = process.inputStream
+                val out = process.outputStream
+                val cmd = "[ -r /proc/cda/skuid ] && head -n 1 /proc/cda/skuid"
+                out.write(cmd.toByteArray())
+                out.flush()
+                out.close()
+                process.waitFor()
 
-        try {
-            val process = Runtime.getRuntime().exec("su")
-            val `in` = process.inputStream
-            val out = process.outputStream
-            val cmd = "[ -r /proc/cda/skuid ] && head -n 1 /proc/cda/skuid"
-            out.write(cmd.toByteArray())
-            out.flush()
-            out.close()
-            process.waitFor()
+                if (process.exitValue() != 0) {
+                    Log.e(TAG, "Failed to obtain root")
+                    try {
+                        val p = Runtime.getRuntime().exec("getprop ro.cda.skuid.id")
 
-            if (process.exitValue() != 0) {
-                Log.e(TAG, "Failed to obtain root")
-            } else {
-                var ch: Int
-                val sb = StringBuilder()
-                while (`in`.read().let { ch = it; it != -1 })
-                    sb.append(ch.toChar())
-                skuid = sb.toString()
+                        val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader?)
+                        skuid = stdInput.readLine().trim()
+
+                    } catch (e: IOException) {
+                        e.printStackTrace()
+                    }
+                }
+                else {
+                    var ch: Int
+                    val sb = StringBuilder()
+                    while (`in`.read().let { ch = it; it != -1 })
+                        sb.append(ch.toChar())
+                    skuid = sb.toString()
+                }
+                skuid = skuid.trim { it <= ' ' }
+
+            } catch (e: IOException) {
+                Log.e(TAG, "IOException, " + e.message)
+
+            } catch (e: InterruptedException) {
+                Log.e(TAG, "InterruptedException, " + e.message)
             }
-            skuid = skuid.trim { it <= ' ' }
+        }
+        else {
+            Log.e(TAG, "/proc/cda/skuid doesn't exist")
 
-        } catch (e: IOException) {
-            Log.e(TAG, "IOException, " + e.message)
+            try {
+                val p = Runtime.getRuntime().exec("getprop ro.cda.skuid.id")
 
-        } catch (e: InterruptedException) {
-            Log.e(TAG, "InterruptedException, " + e.message)
+                val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader?)
+                skuid = stdInput.readLine().trim()
+
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
         }
 
         val textView = view.findViewById<TextView>(R.id.skuid)
-        if (skuid.isNotEmpty()) {
-            textView.text = String.format("%s", skuid)
-        } else
-            textView.text = String.format("%s", "Not found")
+        textView.text = String.format("%s", skuid)
+
+        var asp = "Unknown"
+        try {
+            val p = Runtime.getRuntime().exec("getprop ro.build.version.security_patch")
+
+            val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader?)
+            asp = stdInput.readLine().trim()
+
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+        val aspTextView = view.findViewById<TextView>(R.id.asp)
+        aspTextView.text = String.format("%s", asp)
+
+        var vsp = ""
+        try {
+            val p = Runtime.getRuntime().exec("getprop ro.vendor.build.security_patch")
+
+            val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader?)
+            vsp = stdInput.readLine().trim()
+
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+        if(vsp.isEmpty()) vsp = "Unknown"
+        val vspTextView = view.findViewById<TextView>(R.id.vsp)
+        vspTextView.text = String.format("%s", vsp)
+
 
         return view
     }
 
-
-    interface OnFragmentInteractionListener
-
     companion object {
 
-        fun newInstance(): DeviceFragment {
-            return DeviceFragment()
-        }
+        internal const val TAG = "DeviceFragmentTag"
     }
 
 }

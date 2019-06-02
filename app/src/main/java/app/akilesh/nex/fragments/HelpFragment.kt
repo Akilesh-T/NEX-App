@@ -16,7 +16,7 @@ class HelpFragment : Fragment(), View.OnClickListener {
     private lateinit var telegramGroup: Button
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.help_fragment, container, false)
+        val view = inflater.inflate(R.layout.fragment_help, container, false)
 
         readMe = view.findViewById(R.id.readme)
         readMe.setOnClickListener(this)
@@ -51,13 +51,9 @@ class HelpFragment : Fragment(), View.OnClickListener {
         }
     }
 
-    interface OnFragmentInteractionListener
-
     companion object {
 
-        fun newInstance(): HelpFragment {
-            return HelpFragment()
-        }
+        internal const val TAG = "HelpFragmentTag"
     }
 
 }
