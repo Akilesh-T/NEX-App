@@ -16,12 +16,15 @@ import com.google.android.material.card.MaterialCardView
 class HomeFragment : Fragment(),  View.OnClickListener  {
     private lateinit var ai:MaterialCardView
     private lateinit var fw:MaterialCardView
+    private lateinit var fu:MaterialCardView
     private lateinit var ga:MaterialCardView
     private lateinit var jc:MaterialCardView
     private lateinit var sr:MaterialCardView
     private lateinit var sb:MaterialCardView
     private lateinit var tm:MaterialCardView
     private lateinit var vs:MaterialCardView
+
+    private val appName: Map<String, String> = mapOf("com.nbc.AIFloatingTouch" to "AI Floating Touch", "com.evenwell.firewall" to "App Traffic Control", "com.android.settings" to "Face Plus Service", "com.nbc.gameassistant" to "Game Assistant", "com.evenwell.cleaner" to "Junk Cleaner", "com.nbc.android.screenrecord" to "Screen Recorder", "com.evenwell.smartboost" to "Smart Boost", "com.evenwell.memorycleaner" to "Task Manager", "com.evenwell.viruscan" to "Virus Scanner")
 
     private fun isCallable(intent: Intent): Boolean {
         val activities = context!!.packageManager.queryIntentActivities(intent,
@@ -36,7 +39,7 @@ class HomeFragment : Fragment(),  View.OnClickListener  {
         if (isCallable(intent))
             startActivity(intent)
         else {
-           val toast = Toast.makeText(activity, "$packageName is not installed", Toast.LENGTH_SHORT)
+           val toast = Toast.makeText(activity, "${appName[packageName]} is not installed", Toast.LENGTH_SHORT)
            toast.setGravity(Gravity.BOTTOM, 0, 230)
            toast.show()
         }
@@ -50,6 +53,9 @@ class HomeFragment : Fragment(),  View.OnClickListener  {
 
         fw = view.findViewById(R.id.fw_desc)
         fw.setOnClickListener(this)
+
+        fu = view.findViewById(R.id.face_unlock)
+        fu.setOnClickListener(this)
 
         ga = view.findViewById(R.id.ga_desc)
         ga.setOnClickListener(this)
@@ -80,6 +86,10 @@ class HomeFragment : Fragment(),  View.OnClickListener  {
 
             R.id.fw_desc -> {
                 launchApp("com.evenwell.firewall", "com.evenwell.firewall.TrafficControl")
+            }
+
+            R.id.face_unlock -> {
+                launchApp("com.android.settings", "com.android.settings.Settings\$SecurityDashboardActivity")
             }
 
             R.id.ga_desc -> {

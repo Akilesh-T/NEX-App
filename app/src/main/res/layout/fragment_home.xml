@@ -65,6 +65,27 @@
 
                 <TextView
                     style="@style/CardHeaders"
+                    app:drawableStartCompat="@drawable/ic_face"
+                    android:text="@string/face_unlock" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/face_unlock"
+                    style="@style/Cards">
+                    <TextView
+                        style="@style/Text"
+                        android:text="@string/face_unlock_desc"/>
+                </com.google.android.material.card.MaterialCardView>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:clipChildren="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16.0dip">
+
+                <TextView
+                    style="@style/CardHeaders"
                     app:drawableStartCompat="@drawable/ic_game"
                     android:text="@string/game_assistant" />
 

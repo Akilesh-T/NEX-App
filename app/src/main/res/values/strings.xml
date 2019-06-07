@@ -57,5 +57,7 @@
     <string name="follow_ln">Follow LoveNokia</string>
     <string name="blog">Blog</string>
     <string name="fb">Facebook</string>
+    <string name="face_unlock">Face Unlock</string>
+    <string name="face_unlock_desc">Unlock with a glance. Just lift the phone to unlock, even when the screen is off. Find it under device security settings.</string>
 
 </resources>
