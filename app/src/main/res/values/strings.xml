@@ -59,5 +59,8 @@
     <string name="fb">Facebook</string>
     <string name="face_unlock">Face Unlock</string>
     <string name="face_unlock_desc">Unlock with a glance. Just lift the phone to unlock, even when the screen is off. Find it under device security settings.</string>
+    <string name="ota_update_link">OTA Update Link</string>
+    <string name="hint">Long press the link for more actions.</string>
+    <string name="system_update">System Update</string>
 
 </resources>

@@ -26,6 +26,9 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
                 HelpFragment.TAG -> {
                     fragment = HelpFragment()
                 }
+                UpdateFragment.TAG -> {
+                    fragment = UpdateFragment()
+                }
                 DeviceFragment.TAG -> {
                     fragment = DeviceFragment()
                 }
@@ -51,6 +54,10 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
             when (menuItem.itemId) {
                 R.id.navigation_help -> {
                     showFragment(HelpFragment.TAG)
+                    dismiss()
+                }
+                R.id.navigation_update -> {
+                    showFragment(UpdateFragment.TAG)
                     dismiss()
                 }
                 R.id.navigation_device_info -> {
