@@ -107,6 +107,48 @@
 
                 <TextView
                     style="@style/CardHeaders"
+                    app:drawableStartCompat="@drawable/ic_gesture"
+                    android:text="@string/gestures" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/ges_desc"
+                    style="@style/Cards">
+                    <TextView
+                        style="@style/Text"
+                        android:text="@string/gestures_desc"/>
+                </com.google.android.material.card.MaterialCardView>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:clipChildren="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16.0dip">
+
+                <TextView
+                    style="@style/CardHeaders"
+                    app:drawableStartCompat="@drawable/ic_notifications"
+                    android:text="@string/glance_screen" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/gl_desc"
+                    style="@style/Cards">
+                    <TextView
+                        style="@style/Text"
+                        android:text="@string/glance_screen_desc"/>
+                </com.google.android.material.card.MaterialCardView>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:clipChildren="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16.0dip">
+
+                <TextView
+                    style="@style/CardHeaders"
                     app:drawableStartCompat="@drawable/ic_delete_sweep"
                     android:text="@string/junk_cleaner" />
 

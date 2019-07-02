@@ -18,13 +18,15 @@ class HomeFragment : Fragment(),  View.OnClickListener  {
     private lateinit var fw:MaterialCardView
     private lateinit var fu:MaterialCardView
     private lateinit var ga:MaterialCardView
+    private lateinit var ges:MaterialCardView
+    private lateinit var gl:MaterialCardView
     private lateinit var jc:MaterialCardView
     private lateinit var sr:MaterialCardView
     private lateinit var sb:MaterialCardView
     private lateinit var tm:MaterialCardView
     private lateinit var vs:MaterialCardView
 
-    private val appName: Map<String, String> = mapOf("com.nbc.AIFloatingTouch" to "AI Floating Touch", "com.evenwell.firewall" to "App Traffic Control", "com.android.settings" to "Face Plus Service", "com.nbc.gameassistant" to "Game Assistant", "com.evenwell.cleaner" to "Junk Cleaner", "com.nbc.android.screenrecord" to "Screen Recorder", "com.evenwell.smartboost" to "Smart Boost", "com.evenwell.memorycleaner" to "Task Manager", "com.evenwell.viruscan" to "Virus Scanner")
+    private val appName: Map<String, String> = mapOf("com.nbc.AIFloatingTouch.STouchActivity" to "AI Floating Touch", "om.evenwell.firewall.TrafficControl" to "App Traffic Control", "com.android.settings.Settings\$SecurityDashboardActivity" to "Face Plus Service", "com.nbc.gameassistant.GameAssistantActivity" to "Game Assistant", "com.android.settings.Settings\$GestureSettingsActivity" to "Gesture overlay", "com.android.systemui.keyguard.glance.GlanceSettingsActivity" to "Glance Screen", "com.evenwell.cleaner.MainActivity" to "Junk Cleaner", "com.nbc.android.screenrecord.ui.ActivitySetting" to "Screen Recorder", "com.evenwell.smartboost.activities.MainActivity" to "Smart Boost", "com.evenwell.memorycleaner.MainActivity" to "Task Manager", "com.evenwell.viruscan.qscanner.VirusScannerActivity" to "Virus Scanner")
 
     private fun isCallable(intent: Intent): Boolean {
         val activities = context!!.packageManager.queryIntentActivities(intent,
@@ -39,7 +41,7 @@ class HomeFragment : Fragment(),  View.OnClickListener  {
         if (isCallable(intent))
             startActivity(intent)
         else {
-           val toast = Toast.makeText(activity, "${appName[packageName]} is not installed", Toast.LENGTH_SHORT)
+           val toast = Toast.makeText(activity, "${appName[className]} is not installed", Toast.LENGTH_SHORT)
            toast.setGravity(Gravity.BOTTOM, 0, 230)
            toast.show()
         }
@@ -59,6 +61,12 @@ class HomeFragment : Fragment(),  View.OnClickListener  {
 
         ga = view.findViewById(R.id.ga_desc)
         ga.setOnClickListener(this)
+
+        ges = view.findViewById(R.id.ges_desc)
+        ges.setOnClickListener(this)
+
+        gl = view.findViewById(R.id.gl_desc)
+        gl.setOnClickListener(this)
 
         jc = view.findViewById(R.id.jc_desc)
         jc.setOnClickListener(this)
@@ -94,6 +102,14 @@ class HomeFragment : Fragment(),  View.OnClickListener  {
 
             R.id.ga_desc -> {
                 launchApp("com.nbc.gameassistant", "com.nbc.gameassistant.GameAssistantActivity")
+            }
+
+            R.id.ges_desc -> {
+                launchApp("com.android.settings", "com.android.settings.Settings\$GestureSettingsActivity")
+            }
+
+            R.id.gl_desc -> {
+                launchApp("com.android.systemui", "com.android.systemui.keyguard.glance.GlanceSettingsActivity")
             }
 
             R.id.jc_desc -> {
