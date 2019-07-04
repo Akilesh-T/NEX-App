@@ -48,7 +48,7 @@ class DeviceFragment : Fragment() {
                     try {
                         val p = Runtime.getRuntime().exec("getprop ro.build.version.incremental")
 
-                        val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader?)
+                        val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader)
                         buildVer = stdInput.readLine().trim()
 
                     } catch (e: IOException) {
@@ -77,7 +77,7 @@ class DeviceFragment : Fragment() {
             try {
                 val p = Runtime.getRuntime().exec("getprop ro.build.version.incremental")
 
-                val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader?)
+                val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader)
                 buildVer = stdInput.readLine().trim()
 
             } catch (e: IOException) {
@@ -106,7 +106,7 @@ class DeviceFragment : Fragment() {
                     try {
                         val p = Runtime.getRuntime().exec("getprop ro.cda.skuid.id")
 
-                        val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader?)
+                        val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader)
                         skuid = stdInput.readLine().trim()
 
                     } catch (e: IOException) {
@@ -135,7 +135,7 @@ class DeviceFragment : Fragment() {
             try {
                 val p = Runtime.getRuntime().exec("getprop ro.cda.skuid.id")
 
-                val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader?)
+                val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader)
                 skuid = stdInput.readLine().trim()
 
             } catch (e: IOException) {
@@ -150,7 +150,7 @@ class DeviceFragment : Fragment() {
         try {
             val p = Runtime.getRuntime().exec("getprop ro.build.version.security_patch")
 
-            val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader?)
+            val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader)
             asp = stdInput.readLine().trim()
 
         } catch (e: IOException) {
@@ -163,7 +163,7 @@ class DeviceFragment : Fragment() {
         try {
             val p = Runtime.getRuntime().exec("getprop ro.vendor.build.security_patch")
 
-            val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader?)
+            val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader)
             vsp = stdInput.readLine().trim()
 
         } catch (e: IOException) {
@@ -173,6 +173,35 @@ class DeviceFragment : Fragment() {
         val vspTextView = view.findViewById<TextView>(R.id.vsp)
         vspTextView.text = String.format("%s", vsp)
 
+        var ab = ""
+        try {
+            val p = Runtime.getRuntime().exec("getprop ro.build.ab_update")
+
+            val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader)
+            ab = stdInput.readLine().trim()
+
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+
+        var slot = ""
+        if (ab == "true"){
+            try {
+                val p = Runtime.getRuntime().exec("getprop ro.boot.slot_suffix")
+
+                val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader)
+                slot = stdInput.readLine().trim().drop(1)
+
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+        }
+        else {
+            slot = "Your device has only one slot (A only)."
+        }
+
+        val sltTextView = view.findViewById<TextView>(R.id.slot)
+        sltTextView.text = String.format("%s", slot)
 
         return view
     }

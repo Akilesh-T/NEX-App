@@ -99,6 +99,26 @@
 
                 <TextView
                     style="@style/CardHeaders"
+                    android:text="@string/slot" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Cards">
+                    <TextView
+                        style="@style/Text"
+                        android:id="@+id/slot"/>
+                </com.google.android.material.card.MaterialCardView>
+
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:clipChildren="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16.0dip">
+
+                <TextView
+                    style="@style/CardHeaders"
                     android:text="@string/skuid" />
 
                 <com.google.android.material.card.MaterialCardView
