@@ -1,7 +1,7 @@
 package app.akilesh.nex
 
 import android.app.Application
-import android.preference.PreferenceManager
+import androidx.preference.PreferenceManager
 
 class ThemeApplication : Application() {
 
