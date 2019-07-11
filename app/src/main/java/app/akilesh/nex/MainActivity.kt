@@ -14,14 +14,18 @@ import android.view.WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS
 import android.widget.Toast
 import app.akilesh.nex.fragments.*
 import android.view.MenuItem
-import kotlinx.android.synthetic.main.activity_main.*
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.bottomappbar.BottomAppBar
+
+
 
 
 class MainActivity : AppCompatActivity() {
 
     private var currentNightMode: Int = -1
     private val brand: String = Build.BRAND
+    private lateinit var bottomAppBar: BottomAppBar
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -32,7 +36,8 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(bar)
+        bottomAppBar = findViewById(R.id.bar)
+        setSupportActionBar(bottomAppBar)
 
         val decorView = window.decorView
         decorView.systemUiVisibility = FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS
