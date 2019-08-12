@@ -6,10 +6,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 
 import androidx.fragment.app.Fragment
 import app.akilesh.nex.R
+import com.google.android.material.textview.MaterialTextView
 import java.io.*
 
 
@@ -19,15 +19,15 @@ class DeviceFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_device, container, false)
 
         val brand = Build.BRAND
-        val deviceBrand = view.findViewById<TextView>(R.id.brand)
+        val deviceBrand = view.findViewById<MaterialTextView>(R.id.brand)
         deviceBrand.text = String.format("%s", brand)
 
         val model = Build.MODEL
-        val deviceModel = view.findViewById<TextView>(R.id.model)
+        val deviceModel = view.findViewById<MaterialTextView>(R.id.model)
         deviceModel.text = String.format("%s", model)
 
         val code = Build.DEVICE
-        val deviceCodeName = view.findViewById<TextView>(R.id.codeName)
+        val deviceCodeName = view.findViewById<MaterialTextView>(R.id.codeName)
         deviceCodeName.text = String.format("%s", code)
 
         var buildVer = "Unknown"
@@ -85,7 +85,7 @@ class DeviceFragment : Fragment() {
             }
         }
 
-        val build = view.findViewById<TextView>(R.id.buildVersion)
+        val build = view.findViewById<MaterialTextView>(R.id.buildVersion)
         build.text = String.format("%s", buildVer)
 
 
@@ -143,7 +143,7 @@ class DeviceFragment : Fragment() {
             }
         }
 
-        val textView = view.findViewById<TextView>(R.id.skuid)
+        val textView = view.findViewById<MaterialTextView>(R.id.skuid)
         textView.text = String.format("%s", skuid)
 
         var asp = "Unknown"
@@ -156,7 +156,7 @@ class DeviceFragment : Fragment() {
         } catch (e: IOException) {
             e.printStackTrace()
         }
-        val aspTextView = view.findViewById<TextView>(R.id.asp)
+        val aspTextView = view.findViewById<MaterialTextView>(R.id.asp)
         aspTextView.text = String.format("%s", asp)
 
         var vsp = ""
@@ -170,7 +170,7 @@ class DeviceFragment : Fragment() {
             e.printStackTrace()
         }
         if(vsp.isEmpty()) vsp = "Unknown"
-        val vspTextView = view.findViewById<TextView>(R.id.vsp)
+        val vspTextView = view.findViewById<MaterialTextView>(R.id.vsp)
         vspTextView.text = String.format("%s", vsp)
 
         var ab = ""
@@ -200,7 +200,7 @@ class DeviceFragment : Fragment() {
             slot = "Your device has only one slot (A only)."
         }
 
-        val sltTextView = view.findViewById<TextView>(R.id.slot)
+        val sltTextView = view.findViewById<MaterialTextView>(R.id.slot)
         sltTextView.text = String.format("%s", slot)
 
         return view

@@ -19,7 +19,7 @@
                 style="@style/Cards"
                 >
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     style="@style/Text"
                     android:text="@string/intro" />
             </com.google.android.material.card.MaterialCardView>
@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16.0dip">
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     style="@style/CardHeaders"
                     app:drawableStartCompat="@drawable/ic_android"
                     android:text="@string/app_version" />
@@ -50,14 +50,14 @@
                 android:layout_marginTop="16.0dip"
                 android:clipChildren="false">
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     style="@style/CardHeaders"
                     app:drawableStartCompat="@drawable/ic_magisk"
                     android:text="@string/nex_version" />
 
                 <com.google.android.material.card.MaterialCardView style="@style/Cards">
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/nex_version"
                         style="@style/Text" />
                 </com.google.android.material.card.MaterialCardView>
@@ -70,14 +70,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16.0dip">
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     style="@style/CardHeaders"
                     app:drawableStartCompat="@drawable/ic_build"
                     android:text="@string/made_by" />
 
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Cards">
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         style="@style/Text"
                         android:text="@string/my_name"/>
                 </com.google.android.material.card.MaterialCardView>

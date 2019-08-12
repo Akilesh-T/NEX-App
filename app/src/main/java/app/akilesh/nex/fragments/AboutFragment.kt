@@ -5,10 +5,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import app.akilesh.nex.BuildConfig
 import app.akilesh.nex.R
+import com.google.android.material.textview.MaterialTextView
 import java.io.*
 
 
@@ -17,18 +17,18 @@ class AboutFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_about, container, false)
 
-        val ver = view.findViewById<TextView>(R.id.version)
+        val ver = view.findViewById<MaterialTextView>(R.id.version)
         val versionName = BuildConfig.VERSION_NAME
         ver.text = String.format("%s", versionName)
 
         val propPath = "/sbin/.magisk/modules/nokia-extensions/module.prop"
-        val magiskVer = view.findViewById<TextView>(R.id.nex_version)
+        val magiskVer = view.findViewById<MaterialTextView>(R.id.nex_version)
         var modVer = "Unknown"
         if(File(propPath).exists()) {
             try {
                 val p = Runtime.getRuntime().exec("sed -n s/^version=//p $propPath | head -n 1")
 
-                val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader?)
+                val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader)
                 modVer = stdInput.readLine().trimStart('v')
 
             } catch (e: IOException) {

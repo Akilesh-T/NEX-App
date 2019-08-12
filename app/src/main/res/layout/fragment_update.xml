@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16.0dip">
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     style="@style/CardHeaders"
                     app:drawableStartCompat="@drawable/ic_link"
                     android:text="@string/ota_update_link"/>
@@ -30,14 +30,14 @@
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Cards">
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         style="@style/Text"
                         android:id="@+id/url"/>
                 </com.google.android.material.card.MaterialCardView>
 
             </FrameLayout>
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/hint"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

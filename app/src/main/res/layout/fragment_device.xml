@@ -20,13 +20,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16.0dip">
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     style="@style/CardHeaders"
                     android:text="@string/brand" />
 
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Cards">
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         style="@style/Text"
                         android:id="@+id/brand"/>
                 </com.google.android.material.card.MaterialCardView>
@@ -39,13 +39,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16.0dip">
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     style="@style/CardHeaders"
                     android:text="@string/model" />
 
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Cards">
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         style="@style/Text"
                         android:id="@+id/model"/>
                 </com.google.android.material.card.MaterialCardView>
@@ -58,13 +58,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16.0dip">
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     style="@style/CardHeaders"
                     android:text="@string/code_name" />
 
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Cards">
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         style="@style/Text"
                         android:id="@+id/codeName"/>
                 </com.google.android.material.card.MaterialCardView>
@@ -77,14 +77,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16.0dip">
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     style="@style/CardHeaders"
                     android:text="@string/build_version" />
 
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Cards"
                     android:id="@+id/buildVersionCard">
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         style="@style/Text"
                         android:id="@+id/buildVersion"/>
                 </com.google.android.material.card.MaterialCardView>
@@ -97,13 +97,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16.0dip">
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     style="@style/CardHeaders"
                     android:text="@string/slot" />
 
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Cards">
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         style="@style/Text"
                         android:id="@+id/slot"/>
                 </com.google.android.material.card.MaterialCardView>
@@ -117,13 +117,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16.0dip">
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     style="@style/CardHeaders"
                     android:text="@string/skuid" />
 
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Cards">
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         style="@style/Text"
                         android:id="@+id/skuid"/>
                 </com.google.android.material.card.MaterialCardView>
@@ -136,13 +136,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16.0dip">
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     style="@style/CardHeaders"
                     android:text="@string/security_patch" />
 
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Cards">
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         style="@style/Text"
                         android:id="@+id/asp"/>
                 </com.google.android.material.card.MaterialCardView>
@@ -155,13 +155,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16.0dip">
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     style="@style/CardHeaders"
                     android:text="@string/vendor_security_patch" />
 
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Cards">
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         style="@style/Text"
                         android:id="@+id/vsp"/>
                 </com.google.android.material.card.MaterialCardView>

@@ -1,22 +1,21 @@
 package app.akilesh.nex
 
-import androidx.appcompat.app.AppCompatActivity
 
 import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.view.Menu
-
-
+import android.view.MenuItem
 import android.view.View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
 import android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
 import android.view.WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS
 import android.widget.Toast
-import app.akilesh.nex.fragments.*
-import android.view.MenuItem
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import androidx.appcompat.app.AppCompatActivity
+import app.akilesh.nex.fragments.BottomNavigationDrawerFragment
+import app.akilesh.nex.fragments.HomeFragment
+import app.akilesh.nex.fragments.SettingsFragment
 import com.google.android.material.bottomappbar.BottomAppBar
-
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 

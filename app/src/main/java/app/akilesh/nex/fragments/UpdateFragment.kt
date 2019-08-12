@@ -6,16 +6,16 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import app.akilesh.nex.R
+import com.google.android.material.textview.MaterialTextView
 import java.io.File
 
 @SuppressLint("SdCardPath")
 class UpdateFragment: Fragment() {
 
-    private lateinit var textView: TextView
-    private lateinit var hintText: TextView
+    private lateinit var textView: MaterialTextView
+    private lateinit var hintText: MaterialTextView
     private lateinit var url: String
     private lateinit var cmd: String
 
