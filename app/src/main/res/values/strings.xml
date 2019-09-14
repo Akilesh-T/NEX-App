@@ -67,5 +67,6 @@
     <string name="gestures">Gestures</string>
     <string name="gestures_desc">Quick gestures to control your phone.</string>
     <string name="slot">Active slot</string>
+    <string name="build_fingerprint">Build Fingerprint</string>
 
 </resources>

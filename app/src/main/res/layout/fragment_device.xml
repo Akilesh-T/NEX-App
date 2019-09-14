@@ -99,6 +99,26 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/CardHeaders"
+                    android:text="@string/build_fingerprint" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Cards"
+                    android:id="@+id/buildFingerprintCard">
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/Text"
+                        android:id="@+id/buildFingerprint"/>
+                </com.google.android.material.card.MaterialCardView>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:clipChildren="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16.0dip">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/CardHeaders"
                     android:text="@string/slot" />
 
                 <com.google.android.material.card.MaterialCardView

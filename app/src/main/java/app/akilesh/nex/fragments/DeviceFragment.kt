@@ -21,6 +21,7 @@ class DeviceFragment : Fragment(){
         brand.text = Build.BRAND
         model.text = Build.MODEL
         codeName.text = Build.DEVICE
+        buildFingerprint.text = Build.FINGERPRINT
 
         val outputs = Shell.sh("getprop ro.build.ab_update").exec().out
         if(outputs.component1() == "true") {
