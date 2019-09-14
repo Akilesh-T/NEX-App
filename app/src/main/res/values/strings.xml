@@ -66,6 +66,6 @@
     <string name="glance_screen_desc">An enhanced version of ambient display with more features.</string>
     <string name="gestures">Gestures</string>
     <string name="gestures_desc">Quick gestures to control your phone.</string>
-    <string name="slot">Slot</string>
+    <string name="slot">Active slot</string>
 
 </resources>

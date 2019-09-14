@@ -6,28 +6,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import app.akilesh.nex.R
+import kotlinx.android.synthetic.main.fragment_help.*
 
 class HelpFragment : Fragment(), View.OnClickListener {
-    private lateinit var readMe: Button
-    private lateinit var xda: Button
-    private lateinit var telegramGroup: Button
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_help, container, false)
+        return inflater.inflate(R.layout.fragment_help, container, false)
+    }
 
-        readMe = view.findViewById(R.id.readme)
-        readMe.setOnClickListener(this)
-
-        xda = view.findViewById(R.id.xda)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        readme.setOnClickListener(this)
         xda.setOnClickListener(this)
-
-        telegramGroup = view.findViewById(R.id.telegram)
-        telegramGroup.setOnClickListener(this)
-
-        return view
+        telegram.setOnClickListener(this)
     }
 
     private fun openURL(url: String){

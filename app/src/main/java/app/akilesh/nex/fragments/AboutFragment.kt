@@ -8,40 +8,30 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import app.akilesh.nex.BuildConfig
 import app.akilesh.nex.R
-import com.google.android.material.textview.MaterialTextView
+import com.topjohnwu.superuser.Shell
+import kotlinx.android.synthetic.main.fragment_about.*
 import java.io.*
 
 
 class AboutFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_about, container, false)
+        return inflater.inflate(R.layout.fragment_about, container, false)
+    }
 
-        val ver = view.findViewById<MaterialTextView>(R.id.version)
-        val versionName = BuildConfig.VERSION_NAME
-        ver.text = String.format("%s", versionName)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        version.text = BuildConfig.VERSION_NAME
 
         val propPath = "/sbin/.magisk/modules/nokia-extensions/module.prop"
-        val magiskVer = view.findViewById<MaterialTextView>(R.id.nex_version)
-        var modVer = "Unknown"
         if(File(propPath).exists()) {
-            try {
-                val p = Runtime.getRuntime().exec("sed -n s/^version=//p $propPath | head -n 1")
-
-                val stdInput = BufferedReader(InputStreamReader(p.inputStream) as Reader)
-                modVer = stdInput.readLine().trimStart('v')
-
-            } catch (e: IOException) {
-                e.printStackTrace()
-            }
+            val out = Shell.sh("sed -n s/^version=//p $propPath | head -n 1").exec().out
+            nex_version.text = out.component1().drop(1)
         }
         else {
-            modVer = "Not found"
+            nex_version.text = String.format("%s", "Module not installed")
             Log.e(TAG, "$propPath doesn't exist")
         }
-        magiskVer.text = String.format("%s", modVer)
 
-        return view
     }
 
     companion object {
