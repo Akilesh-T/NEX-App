@@ -11,6 +11,7 @@ import android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
 import android.view.WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import app.akilesh.nex.fragments.BottomNavigationDrawerFragment
 import app.akilesh.nex.fragments.HomeFragment
 import app.akilesh.nex.fragments.SettingsFragment
@@ -43,8 +44,10 @@ class MainActivity : AppCompatActivity() {
         currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
         when (currentNightMode) {
             Configuration.UI_MODE_NIGHT_NO ->
-                // Night mode is not active, we're in day time
                 decorView.systemUiVisibility = SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+
+            Configuration.UI_MODE_NIGHT_YES ->
+                window.statusBarColor = ContextCompat.getColor(this, R.color.card_and_text_bg)
         }
 
         if(savedInstanceState == null)
