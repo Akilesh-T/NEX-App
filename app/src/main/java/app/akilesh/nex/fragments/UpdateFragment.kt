@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.fragment_update.*
 class UpdateFragment: Fragment() {
 
     private var dataFile = "/data/data/com.google.android.gms/shared_prefs/com.google.android.gms.update.storage.xml"
-    private val cmd: String = "[ -r $dataFile ] && cat $dataFile"
+    private val cmd: String = "[ -f $dataFile ] && cat $dataFile"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_update, container, false)

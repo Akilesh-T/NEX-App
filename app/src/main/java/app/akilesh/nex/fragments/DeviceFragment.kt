@@ -23,17 +23,18 @@ class DeviceFragment : Fragment(){
         codeName.text = Build.DEVICE
         buildFingerprint.text = Build.FINGERPRINT
 
-        val outputs = Shell.sh("getprop ro.build.ab_update").exec().out
+        val outputs = mutableListOf<String>()
+        Shell.sh("getprop ro.build.ab_update").to(outputs).exec()
         if(outputs.component1() == "true") {
             val out = Shell.sh("getprop ro.boot.slot_suffix").exec().out
             slot.text = out.toString().drop(2).dropLast(1)
         }
 
         if(Shell.rootAccess()) {
-            Shell.su("[ -r /proc/fver ] && head -n 1 /proc/fver").to(outputs).exec()
+            Shell.su("[ -f /proc/fver ] && head -n 1 /proc/fver").to(outputs).exec()
             buildVersion.text = outputs.component2().substring(4, 23)
 
-            Shell.su("[ -r /proc/cda/skuid ] && head -n 1 /proc/cda/skuid").to(outputs).exec()
+            Shell.su("[ -f /proc/cda/skuid ] && head -n 1 /proc/cda/skuid").to(outputs).exec()
             skuid.text = outputs.component3()
         }
         else {
