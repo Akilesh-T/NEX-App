@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="themeListArray">
-        <item>Light</item>
-        <item>Dark</item>
+        <item>Off</item>
+        <item>On</item>
         <item>Set by Battery Saver</item>
         <item>System default</item>
     </string-array>

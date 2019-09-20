@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 <group android:checkableBehavior="none">
-    <item android:id="@+id/navigation_help"
-        android:title="@string/help"
-        android:icon="@drawable/ic_help" />
+    <item android:id="@+id/navigation_device_info"
+        android:title="@string/device"
+        android:icon="@drawable/ic_device_info" />
 
     <item android:id="@+id/navigation_update"
         android:title="@string/system_update"
         android:icon="@drawable/ic_system_update" />
 
-    <item android:id="@+id/navigation_device_info"
-        android:title="@string/device"
-        android:icon="@drawable/ic_device_info" />
+    <item android:id="@+id/navigation_help"
+        android:title="@string/help"
+        android:icon="@drawable/ic_help" />
 
     <item android:id="@+id/navigation_about"
         android:title="@string/info"

@@ -2,15 +2,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
-        android:layout="@layout/preferences_category"
         app:key="theme_category"
-        app:title="@string/theme_bold">
+        app:title="@string/display">
 
         <ListPreference
             app:key="themePref"
-            app:title="Choose theme"
+            app:title="Dark theme"
+            android:icon="@drawable/ic_theme_pref"
             app:defaultValue="default"
-            app:dialogTitle="Choose theme"
+            app:dialogTitle="Dark theme"
             app:entries="@array/themeListArray"
             app:entryValues="@array/themeEntryArray"
             app:useSimpleSummaryProvider="true"/>
