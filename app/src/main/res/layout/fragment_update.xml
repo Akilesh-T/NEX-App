@@ -20,7 +20,8 @@
                 android:clipChildren="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16.0dip">
+                android:layout_marginTop="16.0dip"
+                android:layout_marginBottom="16dp">
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/CardHeaders"
@@ -42,6 +43,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 style="@style/Text" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/check"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cornerRadius="8dp"
+                android:backgroundTint="@color/colorAccent"
+                app:rippleColor="@color/fab_ripple"
+                android:text="@string/check_for_updates"
+                android:textColor="@color/card_header"
+                android:textAllCaps="false"/>
+
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

@@ -1,6 +1,7 @@
 package app.akilesh.nex.fragments
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,9 +31,17 @@ class UpdateFragment: Fragment() {
             if (matchResult != null) {
                 url.setTextIsSelectable(true)
                 url.text = res
+                check.visibility = View.GONE
                 hint.text = resources.getString(R.string.hint)
-            } else
+            } else {
                 url.text = String.format("%s", "No updates available.")
+                hint.visibility = View.GONE
+                check.setOnClickListener {
+                    val intent = Intent(Intent.ACTION_MAIN)
+                    intent.setClassName("com.google.android.gms","com.google.android.gms.update.SystemUpdateActivity")
+                    startActivity(intent)
+                }
+            }
         }
         else {
             url.text = String.format("%s", "Unable to get root access. Take a bug report or use `adb logcat | grep \"packages/ota-api\"` to get the ota link.")
