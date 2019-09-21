@@ -23,7 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/Applications/Android%20Studio.app/Contents/plugins/android/lib/android.jar!/images/material_design_icons/content/ic_gesture_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/Applications/Android%20Studio.app/Contents/plugins/android/lib/android.jar!/images/material_design_icons/file/ic_cloud_download_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -35,11 +35,8 @@
                           <map>
                             <entry key="autoMirrored" value="true" />
                             <entry key="color" value="183693" />
-                            <entry key="height" value="16" />
-                            <entry key="outputName" value="ic_gesture" />
-                            <entry key="overrideSize" value="true" />
+                            <entry key="outputName" value="ic_system_update" />
                             <entry key="sourceFile" value="$PROJECT_DIR$/.." />
-                            <entry key="width" value="16" />
                           </map>
                         </option>
                       </PersistentState>

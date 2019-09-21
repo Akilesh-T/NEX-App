@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import app.akilesh.nex.R
 import com.topjohnwu.superuser.Shell
 import kotlinx.android.synthetic.main.fragment_device.*
+import java.io.File
 
 
 class DeviceFragment : Fragment(){
@@ -22,6 +23,11 @@ class DeviceFragment : Fragment(){
         model.text = Build.MODEL
         codeName.text = Build.DEVICE
         buildFingerprint.text = Build.FINGERPRINT
+        val firmwareVersionPath = "/proc/fver"
+        val skuidPath = "/proc/cda/skuid"
+        var files  = false
+        if(File(firmwareVersionPath).exists() && File(skuidPath).exists())
+           files = true
 
         val outputs = mutableListOf<String>()
         Shell.sh("getprop ro.build.ab_update").to(outputs).exec()
@@ -30,11 +36,11 @@ class DeviceFragment : Fragment(){
             slot.text = out.toString().drop(2).dropLast(1)
         }
 
-        if(Shell.rootAccess()) {
-            Shell.su("[ -f /proc/fver ] && head -n 1 /proc/fver").to(outputs).exec()
+        if(Shell.rootAccess() && files) {
+            Shell.su("[ -f $firmwareVersionPath ] && head -n 1 $firmwareVersionPath").to(outputs).exec()
             buildVersion.text = outputs.component2().substring(4, 23)
 
-            Shell.su("[ -f /proc/cda/skuid ] && head -n 1 /proc/cda/skuid").to(outputs).exec()
+            Shell.su("[ -f $skuidPath ] && head -n 1 $skuidPath").to(outputs).exec()
             skuid.text = outputs.component3()
         }
         else {
