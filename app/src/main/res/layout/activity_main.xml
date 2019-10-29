@@ -25,10 +25,11 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_home"
         app:backgroundTint="@color/colorAccent"
-        app:tint="@color/card_header"
+        app:layout_anchor="@id/bar"
+        app:maxImageSize="38dp"
         app:rippleColor="@color/fab_ripple"
-        app:layout_anchor="@id/bar"/>
+        app:srcCompat="@drawable/ic_home"
+        app:tint="@color/card_header" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

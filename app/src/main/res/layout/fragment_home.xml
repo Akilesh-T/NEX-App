@@ -44,7 +44,7 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/CardHeaders"
-                    app:drawableStartCompat="@drawable/ic_fw"
+                    app:drawableStartCompat="@drawable/ic_data_usage"
                     android:text="@string/app_traffic" />
 
                 <com.google.android.material.card.MaterialCardView
@@ -170,7 +170,7 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/CardHeaders"
-                    app:drawableStartCompat="@drawable/ic_settings_16dp"
+                    app:drawableStartCompat="@drawable/ic_videocam"
                     android:text="@string/screen_recorder_settings" />
 
                 <com.google.android.material.card.MaterialCardView
@@ -221,27 +221,6 @@
                     <com.google.android.material.textview.MaterialTextView
                         style="@style/Text"
                         android:text="@string/task_manager_desc"/>
-                </com.google.android.material.card.MaterialCardView>
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:clipChildren="false"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16.0dip">
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/CardHeaders"
-                    app:drawableStartCompat="@drawable/ic_security"
-                    android:text="@string/virus_scanner" />
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/vs_desc"
-                    style="@style/Cards">
-                    <com.google.android.material.textview.MaterialTextView
-                        style="@style/Text"
-                        android:text="@string/virus_scan_desc"/>
                 </com.google.android.material.card.MaterialCardView>
 
             </FrameLayout>
