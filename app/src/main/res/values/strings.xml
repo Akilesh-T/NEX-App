@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NEX Launcher</string>
+    <string name="app_name">Nokia Extensions</string>
     <string name="smart_boost">Smart Boost</string>
     <string name="junk_cleaner">Junk Cleaner</string>
     <string name="task_manager">Task Manager</string>
@@ -14,7 +14,7 @@
     <string name="app_traffic_desc">You decide which apps can use your mobile data and WiFi.</string>
     <string name="ai_floating_touch_desc">Predicts your needs based on usage. You can create custom shortcuts and also use gestures to navigate.</string>
     <string name="screen_recorder_settings_desc">Go to the settings page of Screen recorder.</string>
-    <string name="intro">A launch pad for apps installed by Nokia Extensions.</string>
+    <string name="intro">A companion app to manage and launch apps installed by Nokia Extensions.</string>
     <string name="help">Help</string>
     <string name="info">About</string>
     <string name="display"><b>Display</b></string>
@@ -50,5 +50,13 @@
     <string name="slot">Active slot</string>
     <string name="build_fingerprint">Build Fingerprint</string>
     <string name="check_for_updates">Check for updates</string>
+    <string name="features_installed">Installed</string>
+    <string name="features_not_installed">Not installed</string>
+    <string name="manage">Manage</string>
+    <string name="history_of_updates">Update history</string>
+    <string name="from">Pre build</string>
+    <string name="to">Post build</string>
+    <string name="date">Date(Y-M-D)</string>
+    <string name="time">Time(H:M:S)</string>
 
 </resources>

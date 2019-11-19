@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-<group android:checkableBehavior="none">
+    <item android:id="@+id/navigation_manager"
+        android:title="@string/manage"
+        android:icon="@drawable/ic_manage" />
+
     <item android:id="@+id/navigation_device_info"
         android:title="@string/device"
         android:icon="@drawable/ic_device_info" />
@@ -17,6 +20,5 @@
     <item android:id="@+id/navigation_about"
         android:title="@string/info"
         android:icon="@drawable/ic_info" />
-</group>
 
 </menu>

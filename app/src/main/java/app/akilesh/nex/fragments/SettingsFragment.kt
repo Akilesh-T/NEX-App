@@ -1,6 +1,6 @@
 package app.akilesh.nex.fragments
 
-import app.akilesh.nex.ThemeHelper
+import app.akilesh.nex.utils.ThemeUtil
 import androidx.preference.Preference
 import android.os.Bundle
 import androidx.preference.ListPreference
@@ -17,7 +17,7 @@ class SettingsFragment : PreferenceFragmentCompat()  {
         if (themePreference != null) {
             themePreference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, newValue ->
                 val themeOption = newValue as String
-                ThemeHelper().applyTheme(themeOption)
+                ThemeUtil().applyTheme(themeOption)
                 true
             }
         }
@@ -25,6 +25,6 @@ class SettingsFragment : PreferenceFragmentCompat()  {
 
     companion object {
 
-        internal const val TAG = "SettingsFragmentTag"
+        internal const val TAG = "SettingsFragment"
     }
 }

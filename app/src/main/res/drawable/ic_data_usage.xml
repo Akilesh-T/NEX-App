@@ -16,7 +16,7 @@
     android:autoMirrored="true"
     android:viewportHeight="24"
     android:viewportWidth="24"
-    android:tint="@color/card_header">
+    android:tint="@color/colorAccent">
     <path
         android:fillColor="#FFFFFFFF"
         android:pathData="M11,8l0,3l-3,0l0,2l3,0l0,3l2,0l0,-3l3,0l0,-2l-3,0l0,-3z"/>

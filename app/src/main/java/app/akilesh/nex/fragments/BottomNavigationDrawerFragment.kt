@@ -1,43 +1,37 @@
 package app.akilesh.nex.fragments
 
-import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import app.akilesh.nex.R
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import kotlinx.android.synthetic.main.fragment_bottomsheet.*
+import com.google.android.material.navigation.NavigationView
 
 class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
+
+    private lateinit var navigationView: NavigationView
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_bottomsheet, container, false)
     }
-    override fun getTheme(): Int = R.style.BottomSheetDialog
-
-    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog = BottomSheetDialog(requireContext(), theme)
 
     private fun showFragment(tag: String) {
         var fragment = fragmentManager!!.findFragmentByTag(tag)
         if (fragment == null) {
-            when (tag) {
-                HelpFragment.TAG -> {
-                    fragment = HelpFragment()
-                }
-                UpdateFragment.TAG -> {
-                    fragment = UpdateFragment()
-                }
-                DeviceFragment.TAG -> {
-                    fragment = DeviceFragment()
-                }
-                AboutFragment.TAG -> {
-                    fragment = AboutFragment()
-                }
-                else -> {
-                    fragment = HomeFragment()
-                }
+            fragment = when (tag) {
+                HelpFragment.TAG -> HelpFragment()
+
+                UpdateFragment.TAG -> UpdateFragment()
+
+                DeviceInfoFragment.TAG -> DeviceInfoFragment()
+
+                AboutFragment.TAG -> AboutFragment()
+
+                ManagerFragment.TAG -> ManagerFragment()
+
+                else -> HomeFragment()
             }
         }
 
@@ -47,10 +41,11 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
                 .commit()
     }
 
-   override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
-        navigation_view.setNavigationItemSelectedListener { menuItem ->
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        navigationView = view.findViewById(R.id.navigation_view)
+        navigationView.inflateMenu(R.menu.bottom_nav_drawer_menu)
+        navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.navigation_help -> {
                     showFragment(HelpFragment.TAG)
@@ -61,16 +56,21 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
                     dismiss()
                 }
                 R.id.navigation_device_info -> {
-                    showFragment(DeviceFragment.TAG)
+                    showFragment(DeviceInfoFragment.TAG)
                     dismiss()
                 }
                 R.id.navigation_about -> {
                     showFragment(AboutFragment.TAG)
                     dismiss()
                 }
+                R.id.navigation_manager -> {
+                    showFragment(ManagerFragment.TAG)
+                    dismiss()
+                }
             }
             true
         }
+
     }
 
 }

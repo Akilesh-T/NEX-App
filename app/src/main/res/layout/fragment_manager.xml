@@ -10,81 +10,58 @@
         android:clipToPadding="false"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-
             <FrameLayout
                 android:clipChildren="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16.0dip"
-                android:layout_marginBottom="16dp">
+                android:layout_marginTop="16.0dip">
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/CardHeaders"
-                    app:drawableStartCompat="@drawable/ic_link"
-                    android:text="@string/ota_update_link"/>
+                    app:drawableStartCompat="@drawable/ic_check"
+                    android:text="@string/features_installed" />
 
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Cards">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        style="@style/Text"
-                        android:id="@+id/url"/>
+                   <androidx.recyclerview.widget.RecyclerView
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:padding="30dp"
+                       android:id="@+id/recyclerView_installed"/>
+
                 </com.google.android.material.card.MaterialCardView>
 
             </FrameLayout>
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/hint"
-                android:layout_width="match_parent"
-                android:gravity="center"
-                android:layout_height="match_parent"
-                style="@style/Text" />
-
-            <com.google.android.material.button.MaterialButton
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:id="@+id/check"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:cornerRadius="8dp"
-                app:rippleColor="@color/fab_ripple"
-                app:strokeColor="@color/textColorPrimary"
-                app:strokeWidth="1dp"
-                android:text="@string/check_for_updates"
-                android:textColor="@color/textColorPrimary"
-                android:textAllCaps="false"/>
-
             <FrameLayout
-                android:id="@+id/update"
-                android:clipChildren="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16.0dip"
-                android:layout_marginBottom="16dp">
+                android:clipChildren="false">
 
                 <com.google.android.material.textview.MaterialTextView
                     style="@style/CardHeaders"
-                    app:drawableStartCompat="@drawable/ic_history"
-                    android:text="@string/history_of_updates"/>
+                    app:drawableStartCompat="@drawable/ic_clear"
+                    android:text="@string/features_not_installed" />
 
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/Cards">
+                <com.google.android.material.card.MaterialCardView style="@style/Cards">
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:padding="8dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:id="@+id/history_recyclerView"/>
+                        android:padding="30dp"
+                        android:id="@+id/recyclerView_not_installed"/>
 
                 </com.google.android.material.card.MaterialCardView>
 
             </FrameLayout>
-
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -23,6 +23,7 @@
 
         <activity android:name=".MainActivity" />
 
+        <service android:name=".utils.NotificationRebootActionService" />
     </application>
 
 </manifest>

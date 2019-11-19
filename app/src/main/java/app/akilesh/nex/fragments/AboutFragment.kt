@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import app.akilesh.nex.BuildConfig
+import app.akilesh.nex.Const.Path.modulePath
 import app.akilesh.nex.R
 import com.topjohnwu.superuser.Shell
 import kotlinx.android.synthetic.main.fragment_about.*
-import java.io.*
 
 
 class AboutFragment : Fragment() {
@@ -22,10 +22,12 @@ class AboutFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         version.text = BuildConfig.VERSION_NAME
 
-        val propPath = "/sbin/.magisk/modules/nokia-extensions/module.prop"
-        if(File(propPath).exists()) {
-            val out = Shell.sh("sed -n s/^version=//p $propPath | head -n 1").exec().out
-            nex_version.text = out.component1().drop(1)
+        val outputs = mutableListOf<String>()
+        val propPath = modulePath + "module.prop"
+        Shell.su("[ -f $propPath ] && echo y").to(outputs).exec()
+        if(outputs.isNotEmpty() && outputs.component1().isNotBlank()) {
+            Shell.su("sed -n s/^version=//p $propPath | head -n 1").to(outputs).exec()
+            nex_version.text = outputs.component2().drop(1)
         }
         else {
             nex_version.text = String.format("%s", "Module not installed")
@@ -36,6 +38,6 @@ class AboutFragment : Fragment() {
 
     companion object {
 
-        internal const val TAG = "AboutFragmentTag"
+        internal const val TAG = "AboutFragment"
     }
 }

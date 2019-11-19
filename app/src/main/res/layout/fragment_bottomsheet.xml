@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<com.google.android.material.navigation.NavigationView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/navigation_view"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigation_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        app:itemIconTint="@color/colorAccent"
-        app:itemTextColor="@color/textColorPrimary"
-        android:backgroundTint="@color/card_and_text_bg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/bottom_nav_drawer_menu" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    android:layout_height="wrap_content" />

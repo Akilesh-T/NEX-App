@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import app.akilesh.nex.Const.Url
 import app.akilesh.nex.R
 import kotlinx.android.synthetic.main.fragment_help.*
 
@@ -30,22 +31,22 @@ class HelpFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?){
         when(v?.id){
             R.id.readme -> {
-                openURL("https://github.com/Magisk-Modules-Repo/nokia-extensions/blob/master/README.md#how-tos")
+                openURL(Url.githubReadMe)
             }
 
             R.id.xda -> {
-                openURL("https://forum.xda-developers.com/nokia-7-plus/themes/magisk-module-nokia-extensions-android-t3865438?goto=newpost")
+                openURL(Url.xdaThread)
             }
 
             R.id.telegram -> {
-                openURL("https://t.me/NokiaExtensions")
+                openURL(Url.telegramGroup)
             }
         }
     }
 
     companion object {
 
-        internal const val TAG = "HelpFragmentTag"
+        internal const val TAG = "HelpFragment"
     }
 
 }

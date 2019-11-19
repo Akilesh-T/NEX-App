@@ -1,8 +1,8 @@
-package app.akilesh.nex
+package app.akilesh.nex.utils
 
 import androidx.appcompat.app.AppCompatDelegate
 
-class ThemeHelper {
+class ThemeUtil {
      private val lightMode  = "light"
      private val darkMode = "dark"
      private val batterySaverMode = "battery"
