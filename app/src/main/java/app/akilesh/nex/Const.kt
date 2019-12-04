@@ -22,9 +22,9 @@ object Const {
         const val firmwareVersionPath = "/proc/fver"
         const val skuidPath = "/dev/block/bootdevice/by-name/deviceinfo"
         const val gmsUpdatePrefPath = "/data/data/com.google.android.gms/shared_prefs/com.google.android.gms.update.storage.xml"
-        const val OreoOverlay = "/system/vendor/cust/overlay/600WW/"
-        const val OreoOverlayTreble = "/system/cust/overlay/600WW/"
-        const val PieOverlay = "/system/product/overlay/"
+        const val OreoOverlay = "system/vendor/cust/overlay/600WW/"
+        const val OreoOverlayTreble = "system/cust/overlay/600WW/"
+        const val PieOverlay = "system/product/overlay/"
         var overlay = ""
         const val updateHistoryPath = "/data/misc/box/report/SWupgrade"
     }
@@ -48,7 +48,7 @@ object Const {
 
         val TrafficControl = arrayListOf("com.evenwell.firewall", "com.evenwell.firewall.TrafficControl")
 
-        val FacePlusService = arrayListOf("com.android.settings", "cust.settings.faceid.CustFacePlusSuggestionActivity")
+        val FacePlusService = arrayListOf("com.android.settings", "com.android.settings.Settings\$SecurityDashboardActivity")
 
         val GameAssistant = arrayListOf("com.nbc.gameassistant", "com.nbc.gameassistant.GameAssistantActivity")
 
@@ -104,7 +104,7 @@ object Const {
 
     object File {
 
-        val treble = Shell.sh("getprop ro.treble.enabled").exec().out
+        val treble: MutableList<String> = Shell.sh("getprop ro.treble.enabled").exec().out
         init {
             if (release.component1() == "8.1.0") {
                 if (treble.component1() != "true")
@@ -237,7 +237,7 @@ object Const {
         )
 
         private val Glance = listOf(
-                "system/priv-app/GlanceGlance.apk",
+                "system/priv-app/Glance/Glance.apk",
                 "system/vendor/overlay/Glance_overlay.apk"
         )
 

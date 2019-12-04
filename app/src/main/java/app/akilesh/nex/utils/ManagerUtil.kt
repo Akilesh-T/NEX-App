@@ -30,15 +30,15 @@ class ManagerUtil {
     val notInstalled = mutableListOf<String>()
 
     fun initLists(){
-        if (!(release.component1() == "9" && platform.component1() == "sdm660")) {
+        if (release.component1() != "9") {
             featureDirs.remove("GameAssistant")
             featureNames.remove("GameAssistant", "Game Assistant")
         }
-        if (platform.component1() != "msm8998") {
+        if (platform.component1() == "sdm660") {
             featureDirs.remove("Glance")
             featureNames.remove("Glance", "Glance Screen")
         }
-        if (platform.component1() != "msm8998" && platform.component1() != "sdm660") {
+        if (platform.component1() != "sdm660") {
             featureDirs.remove("FacePlusService")
             featureNames.remove("FacePlusService", "Face Unlock")
         }
@@ -56,8 +56,12 @@ class ManagerUtil {
     }
 
     fun remove(feature: String): Boolean {
+        val op = mutableListOf<String>()
         val dir = featureDirNames[feature].toString()
-        val op = Shell.su("rm -rf $modulePrivAppsPath$dir").exec().out
+        filesMap[dir]?.forEach { filePath ->
+            Shell.su("rm -rf $modulePath$filePath").to(op).exec()
+        }
+        Shell.su("rm -rf $modulePrivAppsPath$dir").to(op).exec()
         return if(op.isNullOrEmpty()) {
             Log.d("Remove", "$feature was removed")
             true
@@ -122,7 +126,7 @@ class ManagerUtil {
 
                             val mk = Shell.su("mkdir -p $modulePath$directory").exec().out
                             if (mk.isNullOrEmpty()) {
-                                val cp = Shell.su("cp ${context.filesDir}/$file $modulePath$filePath").exec().out
+                                val cp = Shell.su("cp -f ${context.filesDir}/$file $modulePath$filePath").exec().out
                                 if(cp.isNullOrEmpty()) {
                                     if (filesMap[dir]?.indexOf(filePath) == filesMap[dir]?.lastIndex) {
                                         val intent = Intent(context, NotificationRebootActionService::class.java)
