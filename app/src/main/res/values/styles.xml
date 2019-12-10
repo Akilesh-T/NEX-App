@@ -4,36 +4,26 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="android:colorBackground">@color/card_and_text_bg</item>
-        <item name="colorOnBackground">@color/textColorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColorPrimary">@color/textColorPrimary</item>
-        <item name="android:windowLightStatusBar">true</item>
-        <item name="android:navigationBarColor">@color/card_and_text_bg</item>
         <item name="android:fontFamily">@font/nokia_pure</item>
 
         <item name="dialogTheme">@style/DialogStyle</item>
         <item name="alertDialogTheme">@style/DialogStyle</item>
-        <item name="colorControlHighlight">@color/colorAccent</item>
 
         <item name="bottomAppBarStyle">@style/Widget.MaterialComponents.BottomAppBar.PrimarySurface</item>
         <item name="bottomSheetStyle">@style/Widget.MaterialComponents.BottomSheet.Modal</item>
         <item name="navigationViewStyle">@style/NavigationView</item>
     </style>
+
     
     <style name="DialogStyle" parent="Theme.MaterialComponents.DayNight.Dialog">
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorPrimary</item>
         <item name="dialogCornerRadius">8dp</item>
-        <item name="android:background">@color/card_and_text_bg</item>
-        <item name="android:textColorPrimary">@color/textColorPrimary</item>
-        <item name="textColorAlertDialogListItem">@color/textColorPrimary</item>
         <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
     </style>
     
     <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
-        <item name="android:textColor">@color/colorAccent</item>
         <item name="android:textStyle">bold</item>
     </style>
     
@@ -51,20 +41,17 @@
         <item name="android:layout_marginTop">12.0dip</item>
         <item name="android:layout_marginStart">12.0dip</item>
         <item name="android:layout_marginEnd">12.0dip</item>
-        <item name="cardBackgroundColor">@color/card_and_text_bg</item>
         <item name="cardCornerRadius">8.0dip</item>
         <item name="cardElevation">2.0dip</item>
         <item name="strokeWidth">0.1dp</item>
-        <item name="strokeColor">@color/colorAccent</item>
+        <item name="strokeColor">?colorPrimaryDark</item>
         <item name="cardUseCompatPadding">true</item>
-        <item name="android:clickable">true</item>
-        <item name="android:foreground">?android:attr/selectableItemBackground</item>
-        <item name="rippleColor">@color/colorAccent</item>
+
     </style>
 
     <style name="CardHeaders" parent="@style/TextAppearance.MaterialComponents.Button">
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/card_header</item>
+        <item name="android:textColor">@color/onPrimary</item>
         <item name="android:textAllCaps">false</item>
         <item name="fontFamily">@font/nokia_pure</item>
         <item name="android:gravity">center_vertical</item>
@@ -77,23 +64,17 @@
         <item name="android:paddingEnd">12.0dip</item>
         <item name="android:layout_marginStart">24.0dip</item>
         <item name="android:elevation">4.0dip</item>
-        <item name="android:drawableTint">@color/card_header</item>
+        <item name="android:drawableTint">@color/onPrimary</item>
         <item name="android:drawablePadding">8.0dip</item>
     </style>
 
     <style name="Text" parent="Widget.MaterialComponents.TextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:textSize">16sp</item>
         <item name="android:padding">30dp</item>
-        <item name="android:textColor">@color/textColorPrimary</item>
     </style>
 
     <style name="Button" parent="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon">
-        <item name="strokeColor">@color/card_and_text_bg</item>
-        <item name="strokeWidth">1dp</item>
-        <item name="rippleColor">@color/colorAccent</item>
-        <item name="iconTint">@color/textColorPrimary</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center_horizontal</item>
@@ -101,15 +82,13 @@
         <item name="android:layout_marginEnd">10dp</item>
         <item name="android:layout_marginBottom">10dp</item>
         <item name="android:textAllCaps">false</item>
-        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="iconTint">?colorOnBackground</item>
+        <item name="android:textColor">?colorOnBackground</item>
     </style>
 
     <style name="NavigationView" parent="Widget.MaterialComponents.NavigationView">
         <item name="insetForeground">@android:color/transparent</item>
-        <item name="android:background">@color/card_and_text_bg</item>
         <item name="elevation">0dp</item>
-        <item name="itemTextAppearance">?attr/textAppearanceBody2</item>
-        <item name="itemTextColor">@color/textColorPrimary</item>
-        <item name="itemIconTint">@color/colorAccent</item>
+        <item name="itemIconTint">?colorOnSurface</item>
     </style>
 </resources>

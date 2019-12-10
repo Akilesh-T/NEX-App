@@ -2,6 +2,7 @@ package app.akilesh.nex
 
 
 import android.content.res.Configuration
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.Menu
@@ -17,7 +18,6 @@ import app.akilesh.nex.fragments.HomeFragment
 import app.akilesh.nex.fragments.SettingsFragment
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -43,11 +43,19 @@ class MainActivity : AppCompatActivity() {
         decorView.systemUiVisibility = FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS
         currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
         when (currentNightMode) {
-            Configuration.UI_MODE_NIGHT_NO ->
+            Configuration.UI_MODE_NIGHT_NO -> {
+                val colorAccent = ContextCompat.getColor(this, R.color.colorAccent)
+                window.navigationBarColor = colorAccent
+                window.statusBarColor = colorAccent
                 decorView.systemUiVisibility = SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+            }
 
-            Configuration.UI_MODE_NIGHT_YES ->
-                window.statusBarColor = ContextCompat.getColor(this, R.color.card_and_text_bg)
+            Configuration.UI_MODE_NIGHT_YES -> {
+                val colorSurface = Color.parseColor("#121212")
+                window.statusBarColor = colorSurface
+                window.navigationBarColor = colorSurface
+            }
+
         }
 
         if(savedInstanceState == null)

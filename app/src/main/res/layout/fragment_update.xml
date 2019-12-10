@@ -40,6 +40,7 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/hint"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:gravity="center"
                 android:layout_height="match_parent"
@@ -52,11 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:cornerRadius="8dp"
-                app:rippleColor="@color/fab_ripple"
-                app:strokeColor="@color/textColorPrimary"
-                app:strokeWidth="1dp"
                 android:text="@string/check_for_updates"
-                android:textColor="@color/textColorPrimary"
                 android:textAllCaps="false"/>
 
             <FrameLayout

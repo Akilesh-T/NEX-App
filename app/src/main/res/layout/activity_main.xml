@@ -13,11 +13,10 @@
         android:id="@+id/bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="?colorSurface"
         android:layout_gravity="bottom"
-        app:backgroundTint="@color/card_and_text_bg"
         app:hideOnScroll="true"
         app:layout_scrollFlags="scroll|enterAlways"
-        android:backgroundTint="@color/card_and_text_bg"
         app:navigationIcon="@drawable/ic_menu"
         app:fabAlignmentMode="center" />
 
@@ -25,11 +24,10 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:backgroundTint="@color/colorAccent"
         app:layout_anchor="@id/bar"
+        app:backgroundTint="?colorPrimary"
+        app:tint="@color/onPrimary"
         app:maxImageSize="38dp"
-        app:rippleColor="@color/fab_ripple"
-        app:srcCompat="@drawable/ic_home"
-        app:tint="@color/card_header" />
+        app:srcCompat="@drawable/ic_home" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -2,6 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
+        android:layout="@layout/preference_title"
         app:key="theme_category"
         app:title="@string/display">
 

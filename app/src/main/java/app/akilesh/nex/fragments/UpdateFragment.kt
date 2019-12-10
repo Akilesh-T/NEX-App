@@ -44,10 +44,10 @@ class UpdateFragment: Fragment() {
                 url.setTextIsSelectable(true)
                 url.text = res
                 check.visibility = View.GONE
+                hint.visibility = View.VISIBLE
                 hint.text = resources.getString(R.string.hint)
             } else {
                 url.text = String.format("%s", "No updates available.")
-                hint.visibility = View.GONE
                 check.setOnClickListener {
                     val intent = Intent(Intent.ACTION_MAIN)
                     intent.setClassName("com.google.android.gms","com.google.android.gms.update.SystemUpdateActivity")

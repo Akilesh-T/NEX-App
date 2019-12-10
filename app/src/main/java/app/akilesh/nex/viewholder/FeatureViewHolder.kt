@@ -30,8 +30,6 @@ class FeatureViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         button?.iconTint = feature.color
         button?.setTextColor(feature.color)
         button?.rippleColor = feature.color
-        button?.strokeColor = feature.color
-        button?.strokeWidth = 1
         button?.setOnClickListener {
            when(button?.text){
 
