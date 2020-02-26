@@ -1,4 +1,4 @@
-package app.akilesh.nex.fragments
+package app.akilesh.nex.ui.fragments
 
 import android.content.Intent
 import android.content.pm.PackageManager

@@ -2,7 +2,7 @@ package app.akilesh.nex.utils
 
 import android.util.Log
 import app.akilesh.nex.Const.Path.updateHistoryPath
-import app.akilesh.nex.data.UpdateHistory
+import app.akilesh.nex.model.UpdateHistory
 import com.topjohnwu.superuser.Shell
 
 class UpdateHistoryUtil {

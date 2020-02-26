@@ -1,10 +1,10 @@
-package app.akilesh.nex.adapter
+package app.akilesh.nex.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import app.akilesh.nex.data.Feature
-import app.akilesh.nex.viewholder.FeatureViewHolder
+import app.akilesh.nex.model.Feature
+import app.akilesh.nex.ui.viewholder.FeatureViewHolder
 
 class ManagerAdapter(private val list: List<Feature>): RecyclerView.Adapter<FeatureViewHolder>()  {
 

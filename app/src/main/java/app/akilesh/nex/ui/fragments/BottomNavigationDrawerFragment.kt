@@ -1,4 +1,4 @@
-package app.akilesh.nex.fragments
+package app.akilesh.nex.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

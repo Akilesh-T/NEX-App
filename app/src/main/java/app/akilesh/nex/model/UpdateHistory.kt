@@ -1,4 +1,4 @@
-package app.akilesh.nex.data
+package app.akilesh.nex.model
 
 data class UpdateHistory (
         val date: String,

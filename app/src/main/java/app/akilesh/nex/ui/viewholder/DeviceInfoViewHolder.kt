@@ -1,10 +1,10 @@
-package app.akilesh.nex.viewholder
+package app.akilesh.nex.ui.viewholder
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import app.akilesh.nex.R
-import app.akilesh.nex.data.DeviceInfo
+import app.akilesh.nex.model.DeviceInfo
 import com.google.android.material.textview.MaterialTextView
 
 class DeviceInfoViewHolder(inflater: LayoutInflater, parent: ViewGroup) :

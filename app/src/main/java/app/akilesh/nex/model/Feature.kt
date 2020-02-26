@@ -1,4 +1,4 @@
-package app.akilesh.nex.data
+package app.akilesh.nex.model
 
 import android.content.res.ColorStateList
 import android.graphics.drawable.Drawable

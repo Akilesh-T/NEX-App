@@ -1,4 +1,4 @@
-package app.akilesh.nex.fragments
+package app.akilesh.nex.ui.fragments
 
 import app.akilesh.nex.utils.ThemeUtil
 import androidx.preference.Preference

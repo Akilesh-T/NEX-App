@@ -1,10 +1,10 @@
-package app.akilesh.nex.adapter
+package app.akilesh.nex.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import app.akilesh.nex.data.UpdateHistory
-import app.akilesh.nex.viewholder.UpdateHistoryViewHolder
+import app.akilesh.nex.model.UpdateHistory
+import app.akilesh.nex.ui.viewholder.UpdateHistoryViewHolder
 
 class UpdateHistoryAdapter(private val list: List<UpdateHistory>)
     : RecyclerView.Adapter<UpdateHistoryViewHolder>() {

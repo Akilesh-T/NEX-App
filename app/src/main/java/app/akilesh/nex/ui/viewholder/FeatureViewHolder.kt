@@ -1,10 +1,10 @@
-package app.akilesh.nex.viewholder
+package app.akilesh.nex.ui.viewholder
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import app.akilesh.nex.R
-import app.akilesh.nex.data.Feature
+import app.akilesh.nex.model.Feature
 import app.akilesh.nex.utils.ManagerUtil
 import app.akilesh.nex.utils.ToastAboveFab
 import com.google.android.material.button.MaterialButton

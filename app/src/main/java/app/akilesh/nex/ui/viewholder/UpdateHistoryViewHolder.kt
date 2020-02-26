@@ -1,10 +1,10 @@
-package app.akilesh.nex.viewholder
+package app.akilesh.nex.ui.viewholder
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import app.akilesh.nex.R
-import app.akilesh.nex.data.UpdateHistory
+import app.akilesh.nex.model.UpdateHistory
 import com.google.android.material.textview.MaterialTextView
 
 class UpdateHistoryViewHolder(inflater: LayoutInflater, parent: ViewGroup) :

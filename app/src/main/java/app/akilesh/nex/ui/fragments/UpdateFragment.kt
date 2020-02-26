@@ -1,4 +1,4 @@
-package app.akilesh.nex.fragments
+package app.akilesh.nex.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.akilesh.nex.Const.Path.gmsUpdatePrefPath
 import app.akilesh.nex.R
-import app.akilesh.nex.adapter.UpdateHistoryAdapter
+import app.akilesh.nex.ui.adapter.UpdateHistoryAdapter
 import app.akilesh.nex.utils.UpdateHistoryUtil
 import com.topjohnwu.superuser.Shell
 import kotlinx.android.synthetic.main.fragment_update.*

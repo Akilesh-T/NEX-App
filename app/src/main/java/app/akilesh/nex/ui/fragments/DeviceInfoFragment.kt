@@ -1,4 +1,4 @@
-package app.akilesh.nex.fragments
+package app.akilesh.nex.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.akilesh.nex.Const.File.treble
 import app.akilesh.nex.R
-import app.akilesh.nex.adapter.DeviceInfoAdapter
-import app.akilesh.nex.data.DeviceInfo
+import app.akilesh.nex.ui.adapter.DeviceInfoAdapter
+import app.akilesh.nex.model.DeviceInfo
 import app.akilesh.nex.utils.DeviceInfoUtil
 import kotlinx.android.synthetic.main.fragment_device_info.*
 

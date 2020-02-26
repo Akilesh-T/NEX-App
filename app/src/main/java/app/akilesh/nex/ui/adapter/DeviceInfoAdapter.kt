@@ -1,10 +1,10 @@
-package app.akilesh.nex.adapter
+package app.akilesh.nex.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import app.akilesh.nex.data.DeviceInfo
-import app.akilesh.nex.viewholder.DeviceInfoViewHolder
+import app.akilesh.nex.model.DeviceInfo
+import app.akilesh.nex.ui.viewholder.DeviceInfoViewHolder
 
 class DeviceInfoAdapter(private val list: List<DeviceInfo>)
     : RecyclerView.Adapter<DeviceInfoViewHolder>() {

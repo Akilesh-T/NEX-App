@@ -1,4 +1,4 @@
-package app.akilesh.nex.fragments
+package app.akilesh.nex.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import app.akilesh.nex.Const.Feature.featureNames
 import app.akilesh.nex.Const.File.addExtraFiles
 import app.akilesh.nex.R
-import app.akilesh.nex.adapter.ManagerAdapter
-import app.akilesh.nex.data.Feature
+import app.akilesh.nex.ui.adapter.ManagerAdapter
+import app.akilesh.nex.model.Feature
 import app.akilesh.nex.utils.ManagerUtil
 import kotlinx.android.synthetic.main.fragment_manager.*
 

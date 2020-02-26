@@ -1,4 +1,4 @@
-package app.akilesh.nex.data
+package app.akilesh.nex.model
 
 data class DeviceInfo (
         val prop: String,
