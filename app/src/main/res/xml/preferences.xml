@@ -1,15 +1,14 @@
-<androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.preference.PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
-        android:layout="@layout/preference_title"
         app:key="theme_category"
         app:title="@string/display">
 
         <ListPreference
             app:key="themePref"
             app:title="Dark theme"
-            android:icon="@drawable/ic_theme_pref"
+            app:icon="@drawable/ic_outline_nights_stay"
             app:defaultValue="default"
             app:dialogTitle="Dark theme"
             app:entries="@array/themeListArray"
