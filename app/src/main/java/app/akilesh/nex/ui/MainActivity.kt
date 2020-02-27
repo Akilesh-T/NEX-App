@@ -5,90 +5,66 @@ import android.content.res.Configuration
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+import android.view.View
 import android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-import android.view.WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import app.akilesh.nex.R
+import app.akilesh.nex.databinding.ActivityMainBinding
 import app.akilesh.nex.ui.fragments.BottomNavigationDrawerFragment
 import app.akilesh.nex.ui.fragments.HomeFragment
 import app.akilesh.nex.ui.fragments.SettingsFragment
-import com.google.android.material.bottomappbar.BottomAppBar
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class MainActivity : AppCompatActivity() {
 
-    private var currentNightMode: Int = -1
-    private val brand: String = Build.BRAND
-    private lateinit var bottomAppBar: BottomAppBar
+    private lateinit var binding: ActivityMainBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
+        val brand: String = Build.BRAND
         if(brand != "Nokia") {
             Toast.makeText(this, "This app is only for Nokia phones!", Toast.LENGTH_LONG).show()
             this.finishAffinity()
         }
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        bottomAppBar = findViewById(R.id.bar)
-        setSupportActionBar(bottomAppBar)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val decorView = window.decorView
-        decorView.systemUiVisibility = FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS
-        currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
-        when (currentNightMode) {
+        decorView.systemUiVisibility = WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS
+
+        when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
             Configuration.UI_MODE_NIGHT_NO -> {
-                val colorAccent = ContextCompat.getColor(this,
-                    R.color.colorAccent
-                )
-                window.navigationBarColor = colorAccent
-                window.statusBarColor = colorAccent
-                decorView.systemUiVisibility = SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+                decorView.systemUiVisibility =
+                    SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+                window.navigationBarColor = Color.TRANSPARENT
             }
-
-            Configuration.UI_MODE_NIGHT_YES -> {
-                val colorSurface = Color.parseColor("#121212")
-                window.statusBarColor = colorSurface
-                window.navigationBarColor = colorSurface
-            }
-
         }
 
         if(savedInstanceState == null)
             showFragment(HomeFragment.TAG)
 
-        val fab = findViewById<FloatingActionButton>(R.id.fab)
-        fab.setOnClickListener {
+        binding.fab.setOnClickListener {
             showFragment(HomeFragment.TAG)
         }
 
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val inflater = menuInflater
-        inflater.inflate(R.menu.bottom_appbar_menu, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when(item?.itemId){
-            android.R.id.home -> {
-                val bottomNavDrawerFragment = BottomNavigationDrawerFragment()
-                bottomNavDrawerFragment.show(supportFragmentManager, bottomNavDrawerFragment.tag)
+        binding.bar.setOnMenuItemClickListener {
+            when(it.itemId) {
+                R.id.app_bar_settings -> {
+                    showFragment(SettingsFragment.TAG)
+                }
             }
-
-            R.id.app_bar_settings -> {
-                showFragment(SettingsFragment.TAG)
-            }
+            true
         }
-        return true
+
+        binding.bar.setNavigationOnClickListener {
+            val bottomNavDrawerFragment = BottomNavigationDrawerFragment()
+            bottomNavDrawerFragment.show(supportFragmentManager, bottomNavDrawerFragment.tag)
+        }
     }
 
     private fun showFragment(tag: String) {

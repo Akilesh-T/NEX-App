@@ -13,13 +13,10 @@ class SettingsFragment : PreferenceFragmentCompat()  {
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.preferences, rootKey)
 
-        val themePreference = findPreference<ListPreference>("themePref")
-        if (themePreference != null) {
-            themePreference.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, newValue ->
-                val themeOption = newValue as String
-                ThemeUtil().applyTheme(themeOption)
-                true
-            }
+        findPreference<ListPreference>("themePref")?.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, newValue ->
+            val themeOption = newValue as String
+            ThemeUtil().applyTheme(themeOption)
+            true
         }
     }
 

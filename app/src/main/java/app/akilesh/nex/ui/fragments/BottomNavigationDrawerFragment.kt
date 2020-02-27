@@ -5,17 +5,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import app.akilesh.nex.R
+import app.akilesh.nex.databinding.FragmentBottomsheetBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.google.android.material.navigation.NavigationView
 
 class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
 
-    private lateinit var navigationView: NavigationView
+    private lateinit var binding: FragmentBottomsheetBinding
 
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_bottomsheet, container, false)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentBottomsheetBinding.inflate(inflater, container, false)
+        return binding.root
     }
+
 
     private fun showFragment(tag: String) {
         var fragment = fragmentManager!!.findFragmentByTag(tag)
@@ -43,9 +48,8 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        navigationView = view.findViewById(R.id.navigation_view)
-        navigationView.inflateMenu(R.menu.bottom_nav_drawer_menu)
-        navigationView.setNavigationItemSelectedListener { menuItem ->
+        binding.navigationView.inflateMenu(R.menu.bottom_nav_drawer_menu)
+        binding.navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.navigation_help -> {
                     showFragment(HelpFragment.TAG)

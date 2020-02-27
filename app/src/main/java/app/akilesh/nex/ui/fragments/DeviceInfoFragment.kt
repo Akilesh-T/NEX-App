@@ -7,19 +7,24 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.akilesh.nex.Const.File.treble
-import app.akilesh.nex.R
-import app.akilesh.nex.ui.adapter.DeviceInfoAdapter
+import app.akilesh.nex.databinding.FragmentDeviceInfoBinding
 import app.akilesh.nex.model.DeviceInfo
+import app.akilesh.nex.ui.adapter.DeviceInfoAdapter
 import app.akilesh.nex.utils.DeviceInfoUtil
-import kotlinx.android.synthetic.main.fragment_device_info.*
 
 
 class DeviceInfoFragment : Fragment(){
 
     private var info = mutableListOf<DeviceInfo>()
+    private lateinit var binding: FragmentDeviceInfoBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_device_info, container, false)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentDeviceInfoBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,7 +45,7 @@ class DeviceInfoFragment : Fragment(){
         if (treble.component1() == "true")
             info.add(DeviceInfo("Vendor Security Patch", deviceInfoUtil.vendorSecurityPatch))
 
-        info_recyclerView.apply {
+        binding.infoRecyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
             adapter = DeviceInfoAdapter(info)
         }

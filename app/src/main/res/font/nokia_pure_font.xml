@@ -5,7 +5,7 @@
         android:fontStyle="normal"
         android:fontWeight="400"
         android:font="@font/nokia_pure"
-        app:fon="normal"
+        app:fontStyle="normal"
         app:fontWeight="400"
         app:font="@font/nokia_pure"
         />
