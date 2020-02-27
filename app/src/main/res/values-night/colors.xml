@@ -2,5 +2,6 @@
 <resources>
     <color name="onPrimary">#cccccc</color>
     <color name="remove">#CF6679</color>
+    <color name="colorCustom">#000000</color>
 </resources>
 

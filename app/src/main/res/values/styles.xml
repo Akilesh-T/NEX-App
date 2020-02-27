@@ -5,6 +5,9 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:colorBackground">@color/colorCustom</item>
+        <item name="colorSurface">@color/colorCustom</item>
+        <item name="android:statusBarColor">?colorSurface</item>
         <item name="android:fontFamily">@font/nokia_pure_font</item>
 
         <item name="dialogTheme">@style/DialogStyle</item>

@@ -6,5 +6,6 @@
     <color name="onPrimary">#FAFAFA</color>
     <color name="remove">@color/design_default_color_error</color>
     <color name="install">#388e3c</color>
+    <color name="colorCustom">#FAFAFA</color>
 </resources>
 
