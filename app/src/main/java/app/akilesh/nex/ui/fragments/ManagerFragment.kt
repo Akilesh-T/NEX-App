@@ -55,10 +55,5 @@ class ManagerFragment: Fragment() {
             layoutManager = LinearLayoutManager(activity)
             adapter = ManagerAdapter(fNotInstalled)
         }
-
-    }
-
-    companion object {
-        internal const val TAG = "ManagerFragment"
     }
 }

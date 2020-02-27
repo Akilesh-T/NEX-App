@@ -10,11 +10,10 @@ import android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.NavHostFragment
 import app.akilesh.nex.R
 import app.akilesh.nex.databinding.ActivityMainBinding
 import app.akilesh.nex.ui.fragments.BottomNavigationDrawerFragment
-import app.akilesh.nex.ui.fragments.HomeFragment
-import app.akilesh.nex.ui.fragments.SettingsFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -45,17 +44,17 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        if(savedInstanceState == null)
-            showFragment(HomeFragment.TAG)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.NavHostFragment) as NavHostFragment
+        val navController = navHostFragment.navController
 
         binding.fab.setOnClickListener {
-            showFragment(HomeFragment.TAG)
+            navController.navigate(R.id.homeFragment)
         }
 
         binding.bar.setOnMenuItemClickListener {
             when(it.itemId) {
                 R.id.app_bar_settings -> {
-                    showFragment(SettingsFragment.TAG)
+                    navController.navigate(R.id.settingsFragment)
                 }
             }
             true
@@ -66,28 +65,6 @@ class MainActivity : AppCompatActivity() {
             bottomNavDrawerFragment.show(supportFragmentManager, bottomNavDrawerFragment.tag)
         }
     }
-
-    private fun showFragment(tag: String) {
-        var fragment = supportFragmentManager.findFragmentByTag(tag)
-        if (fragment == null) {
-            when (tag) {
-                HomeFragment.TAG -> {
-                    fragment = HomeFragment()
-                }
-                SettingsFragment.TAG -> {
-                    fragment = SettingsFragment()
-                }
-            }
-        }
-
-        fragment?.let {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.frameLayout, it, tag)
-                .commit()
-        }
-    }
-
 }
 
 

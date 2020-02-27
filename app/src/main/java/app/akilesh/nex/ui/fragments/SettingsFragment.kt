@@ -19,9 +19,4 @@ class SettingsFragment : PreferenceFragmentCompat()  {
             true
         }
     }
-
-    companion object {
-
-        internal const val TAG = "SettingsFragment"
-    }
 }

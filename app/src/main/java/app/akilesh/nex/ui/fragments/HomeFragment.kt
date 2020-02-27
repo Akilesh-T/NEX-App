@@ -210,13 +210,5 @@ class HomeFragment : Fragment() {
                 false
             }
         }
-
     }
-
-    companion object {
-
-        internal const val TAG = "HomeFragment"
-
-    }
-
 }

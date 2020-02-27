@@ -49,11 +49,5 @@ class DeviceInfoFragment : Fragment(){
             layoutManager = LinearLayoutManager(activity)
             adapter = DeviceInfoAdapter(info)
         }
-
     }
-
-    companion object {
-        internal const val TAG = "DeviceInfoFragment"
-    }
-
 }

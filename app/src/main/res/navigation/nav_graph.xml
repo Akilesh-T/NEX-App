@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="app.akilesh.nex.ui.fragments.AboutFragment"
+        tools:layout="@layout/fragment_about"
+        android:label="AboutFragment" />
+
+    <fragment
+        android:id="@+id/deviceInfoFragment"
+        android:name="app.akilesh.nex.ui.fragments.DeviceInfoFragment"
+        tools:layout="@layout/fragment_device_info"
+        android:label="DeviceInfoFragment" />
+
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="app.akilesh.nex.ui.fragments.HelpFragment"
+        tools:layout="@layout/fragment_help"
+        android:label="HelpFragment" />
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="app.akilesh.nex.ui.fragments.HomeFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="HomeFragment" />
+
+    <fragment
+        android:id="@+id/managerFragment"
+        android:name="app.akilesh.nex.ui.fragments.ManagerFragment"
+        tools:layout="@layout/fragment_manager"
+        android:label="ManagerFragment" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="app.akilesh.nex.ui.fragments.SettingsFragment"
+        android:label="SettingsFragment" />
+
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="app.akilesh.nex.ui.fragments.UpdateFragment"
+        tools:layout="@layout/fragment_update"
+        android:label="UpdateFragment" />
+
+</navigation>

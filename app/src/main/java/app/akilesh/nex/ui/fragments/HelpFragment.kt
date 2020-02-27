@@ -34,10 +34,4 @@ class HelpFragment : Fragment() {
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
         startActivity(intent)
     }
-
-    companion object {
-
-        internal const val TAG = "HelpFragment"
-    }
-
 }

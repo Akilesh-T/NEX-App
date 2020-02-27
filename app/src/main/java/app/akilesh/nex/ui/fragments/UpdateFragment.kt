@@ -70,9 +70,5 @@ class UpdateFragment: Fragment() {
         else {
             binding.url.text = String.format("%s", "Unable to get root access. Take a bug report or use <i>adb logcat | grep \"packages/ota-api\"</i> to get the ota link.")
         }
-
-    }
-    companion object {
-        internal const val TAG = "UpdateFragment"
     }
 }
