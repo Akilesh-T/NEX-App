@@ -1,5 +1,6 @@
 package app.akilesh.nex
 
+import androidx.navigation.navOptions
 import app.akilesh.nex.Const.Url.platform
 import app.akilesh.nex.Const.Url.release
 import com.topjohnwu.superuser.Shell
@@ -21,7 +22,7 @@ object Const {
         const val modulePrivAppsPath = modulePath + "system/priv-app/"
         const val firmwareVersionPath = "/proc/fver"
         const val skuidPath = "/dev/block/bootdevice/by-name/deviceinfo"
-        const val gmsUpdatePrefPath = "/data/data/com.google.android.gms/shared_prefs/com.google.android.gms.update.storage.xml"
+        const val gmsUpdatePrefPath = "/data" + "/data/com.google.android.gms/shared_prefs/com.google.android.gms.update.storage.xml"
         const val OreoOverlay = "system/vendor/cust/overlay/600WW/"
         const val OreoOverlayTreble = "system/cust/overlay/600WW/"
         const val PieOverlay = "system/product/overlay/"
@@ -297,6 +298,17 @@ object Const {
                 "TaskManager" to TaskManager
         )
 
+    }
+
+    object Anim {
+        val navAnim = navOptions {
+            anim  {
+                enter  = R.anim.fragment_enter
+                exit = R.anim.fragment_exit
+                popEnter = R.anim.fragment_enter_pop
+                popExit = R.anim.fragment_exit_pop
+            }
+        }
     }
 
 }

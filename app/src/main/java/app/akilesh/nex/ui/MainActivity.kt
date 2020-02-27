@@ -11,6 +11,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
+import app.akilesh.nex.Const.Anim.navAnim
 import app.akilesh.nex.R
 import app.akilesh.nex.databinding.ActivityMainBinding
 import app.akilesh.nex.ui.fragments.BottomNavigationDrawerFragment
@@ -42,19 +43,22 @@ class MainActivity : AppCompatActivity() {
                     SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
                 window.navigationBarColor = Color.TRANSPARENT
             }
+            Configuration.UI_MODE_NIGHT_YES -> {
+                window.navigationBarColor = Color.parseColor("#1E1E1E")
+            }
         }
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.NavHostFragment) as NavHostFragment
         val navController = navHostFragment.navController
 
         binding.fab.setOnClickListener {
-            navController.navigate(R.id.homeFragment)
+            navController.navigate(R.id.homeFragment, null, navAnim)
         }
 
         binding.bar.setOnMenuItemClickListener {
             when(it.itemId) {
                 R.id.app_bar_settings -> {
-                    navController.navigate(R.id.settingsFragment)
+                    navController.navigate(R.id.settingsFragment, null, navAnim)
                 }
             }
             true

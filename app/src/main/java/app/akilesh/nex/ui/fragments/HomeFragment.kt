@@ -31,7 +31,7 @@ class HomeFragment : Fragment() {
 
 
     private fun isCallable(intent: Intent): Boolean {
-        val activities = context!!.packageManager.queryIntentActivities(intent,
+        val activities = requireContext().packageManager.queryIntentActivities(intent,
                 PackageManager.MATCH_DEFAULT_ONLY)
         return activities.isNotEmpty()
     }
