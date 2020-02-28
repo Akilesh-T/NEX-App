@@ -2,6 +2,7 @@ package app.akilesh.nex.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,10 +14,13 @@ import app.akilesh.nex.databinding.FragmentUpdateBinding
 import app.akilesh.nex.ui.adapter.UpdateHistoryAdapter
 import app.akilesh.nex.utils.UpdateHistoryUtil
 import com.topjohnwu.superuser.Shell
+import org.xmlpull.v1.XmlPullParser
+import org.xmlpull.v1.XmlPullParserFactory
+import java.io.File
+import java.io.InputStreamReader
 
 class UpdateFragment: Fragment() {
 
-    private val cmd: String = "[ -f $gmsUpdatePrefPath ] && cat $gmsUpdatePrefPath"
     private lateinit var binding: FragmentUpdateBinding
 
     override fun onCreateView(
@@ -42,23 +46,27 @@ class UpdateFragment: Fragment() {
         else binding.update.visibility = View.GONE
 
         if(Shell.rootAccess()) {
-            val output = Shell.su(cmd).exec().out
-            val regex = "(https)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*(zip)".toRegex()
-            val matchResult = regex.find(output.toString())
-            val res = matchResult?.value
+            if(Shell.su("[ -f $gmsUpdatePrefPath ]").exec().isSuccess) {
 
-            if (matchResult != null) {
-                binding.url.apply {
-                    setTextIsSelectable(true)
-                    text = res
+                val file = File(requireContext().filesDir, "update.xml")
+                Shell.su(
+                    "cp -af $gmsUpdatePrefPath ${file.absolutePath}",
+                    "chmod 664 ${file.absolutePath}"
+                ).exec()
+                val result = parseXML(file.reader())
+                if (result != null) {
+                    Log.d("update-url", result)
+                    binding.url.apply {
+                        text = String.format("%s", result)
+                        setTextIsSelectable(true)
+                    }
+                    binding.hint.apply {
+                        visibility = View.VISIBLE
+                        text = String.format("%s", resources.getString(R.string.hint))
+                    }
                 }
-                binding.check.visibility = View.GONE
-
-                binding.hint.apply {
-                    visibility = View.VISIBLE
-                    text = resources.getString(R.string.hint)
-                }
-            } else {
+            }
+            else {
                 binding.url.text = String.format("%s", "No updates available.")
                 binding.check.setOnClickListener {
                     val intent = Intent(Intent.ACTION_MAIN)
@@ -70,5 +78,33 @@ class UpdateFragment: Fragment() {
         else {
             binding.url.text = String.format("%s", "Unable to get root access. Take a bug report or use <i>adb logcat | grep \"packages/ota-api\"</i> to get the ota link.")
         }
+    }
+
+    private fun parseXML(reader: InputStreamReader): String? {
+        val xmlPullParserFactory = XmlPullParserFactory.newInstance()
+        xmlPullParserFactory.isNamespaceAware = true
+        val xmlPullParser = xmlPullParserFactory.newPullParser()
+        xmlPullParser.setInput(reader)
+        var eventType = xmlPullParser.eventType
+        var tag: String? = null
+        var attr: String? = null
+        var updateURL: String? = null
+
+        while (eventType != XmlPullParser.END_DOCUMENT) {
+            if (eventType == XmlPullParser.START_TAG) {
+                if ("map" != xmlPullParser.name) {
+                    tag = xmlPullParser.name
+                    attr = xmlPullParser.getAttributeValue(null, "name")
+                }
+            }
+            else if (eventType == XmlPullParser.END_TAG) tag = null
+            else if (eventType == XmlPullParser.TEXT) {
+                if (tag != null && attr == "control.installation.current_update_url") {
+                    updateURL = xmlPullParser.text
+                }
+            }
+            eventType = xmlPullParser.next()
+        }
+        return updateURL
     }
 }

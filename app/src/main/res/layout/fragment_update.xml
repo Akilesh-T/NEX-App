@@ -55,6 +55,7 @@
                 android:layout_height="wrap_content"
                 app:cornerRadius="8dp"
                 android:text="@string/check_for_updates"
+                android:textColor="?android:textColorPrimary"
                 android:textAllCaps="false"/>
 
             <FrameLayout
