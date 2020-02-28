@@ -1,9 +1,12 @@
 package app.akilesh.nex.utils
 
+import android.content.Context
 import android.os.Build
 import app.akilesh.nex.Const.Path.firmwareVersionPath
 import app.akilesh.nex.Const.Path.skuidPath
+import app.akilesh.nex.R
 import com.topjohnwu.superuser.Shell
+import com.topjohnwu.superuser.ShellUtils
 import java.io.File
 
 class DeviceInfoUtil {
@@ -11,54 +14,42 @@ class DeviceInfoUtil {
     var model: String = ""
     var codeName: String = ""
     var buildFingerprint: String = ""
+    var isAB: String = ""
     var activeSlot: String = ""
     var skuid: String = ""
     var buildVersion: String = ""
     var androidSecurityPatch: String = ""
     var vendorSecurityPatch: String = ""
+    var isSAR: String = ""
 
-    fun init(){
+    fun init(context: Context) {
 
         model = Build.MODEL
         codeName = Build.DEVICE
         buildFingerprint = Build.FINGERPRINT
 
-        var file  = false
-        if(File(firmwareVersionPath).exists())
-            file = true
+        // Based on Magisk's implementation
+        val shell = Shell.newInstance()
+        val job = shell.newJob()
+        job.add(context.resources.openRawResource(R.raw.props))
+        job.add("get_props").exec()
 
-        val outputs = mutableListOf<String>()
-        Shell.sh("getprop ro.build.ab_update").to(outputs).exec()
-        activeSlot = if(outputs.component1() == "true") {
-            val out = Shell.sh("getprop ro.boot.slot_suffix").exec().out
-            out.toString().drop(2).dropLast(1)
+        fun getVar(name: String) = ShellUtils.fastCmd(shell, "echo \$$name")
+
+        activeSlot = getVar("SLOT")
+        androidSecurityPatch = getVar("ASP")
+        vendorSecurityPatch = getVar("VSP")
+        buildVersion = getVar("BUILD")
+        skuid = getVar("SKUID")
+        isAB = if (getVar("AB").toBoolean()) "Yes" else "No"
+        isSAR = getVar("SYSTEM_ROOT")
+
+        if (shell.isRoot) {
+            if (File(firmwareVersionPath).exists()) {
+                buildVersion =
+                    Shell.su("[ -f $firmwareVersionPath ] && head -n 1 $firmwareVersionPath").exec().out.component1().substring(4, 23)
+            }
+            skuid = Shell.su("strings $skuidPath | grep 600..").exec().out.component1()
         }
-        else "A only"
-
-        buildVersion = if(Shell.rootAccess() && file) {
-            Shell.su("[ -f $firmwareVersionPath ] && head -n 1 $firmwareVersionPath").to(outputs).exec()
-            outputs.component2().substring(4, 23)
-        }
-        else {
-            Shell.sh("getprop ro.build.version.incremental").to(outputs).exec()
-            outputs.component2()
-        }
-
-        skuid = if(Shell.rootAccess()) {
-            Shell.su("strings $skuidPath | grep 600..").to(outputs).exec()
-            outputs.component3()
-        }
-        else {
-            Shell.sh("getprop ro.cda.skuid.id").to(outputs).exec()
-            outputs.component3()
-        }
-
-        Shell.sh("getprop ro.build.version.security_patch").to(outputs).exec()
-        androidSecurityPatch = outputs.component4()
-
-        Shell.sh("getprop ro.vendor.build.security_patch").to(outputs).exec()
-        vendorSecurityPatch = outputs.component5()
-
     }
-
 }

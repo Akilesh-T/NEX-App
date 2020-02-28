@@ -30,15 +30,15 @@ class ManagerUtil {
     val notInstalled = mutableListOf<String>()
 
     fun initLists(){
-        if (release.component1() != "9") {
+        if (release != "9") {
             featureDirs.remove("GameAssistant")
             featureNames.remove("GameAssistant", "Game Assistant")
         }
-        if (platform.component1() == "sdm660") {
+        if (platform == "sdm660") {
             featureDirs.remove("Glance")
             featureNames.remove("Glance", "Glance Screen")
         }
-        if (platform.component1() != "sdm660") {
+        if (platform != "sdm660") {
             featureDirs.remove("FacePlusService")
             featureNames.remove("FacePlusService", "Face Unlock")
         }

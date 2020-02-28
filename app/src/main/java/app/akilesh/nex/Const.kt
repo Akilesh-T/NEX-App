@@ -8,13 +8,13 @@ import com.topjohnwu.superuser.Shell
 object Const {
 
     object Url {
-        val platform: MutableList<String> = Shell.sh("getprop ro.board.platform").exec().out
-        val release: MutableList<String> = Shell.sh("getprop ro.build.version.release").exec().out
+        val platform: String = Shell.sh("getprop ro.board.platform").exec().out.component1()
+        val release: String = Shell.sh("getprop ro.build.version.release").exec().out.component1()
 
         const val githubReadMe = "https://github.com/Magisk-Modules-Repo/nokia-extensions/blob/master/README.md"
         const val xdaThread = "https://forum.xda-developers.com/nokia-7-plus/themes/magisk-module-nokia-extensions-android-t3865438?goto=newpost"
         const val telegramGroup = "https://t.me/NokiaExtensions"
-        val githubRaw = "https://raw.githubusercontent.com/Akilesh-T/nokia-extensions-repo/master/${platform.component1()}/${release.component1()}/"
+        val githubRaw = "https://raw.githubusercontent.com/Akilesh-T/nokia-extensions-repo/master/$platform/$release/"
     }
 
     object Path {
@@ -105,20 +105,20 @@ object Const {
 
     object File {
 
-        val treble: MutableList<String> = Shell.sh("getprop ro.treble.enabled").exec().out
+        val treble: String = Shell.sh("getprop ro.treble.enabled").exec().out.component1()
         init {
-            if (release.component1() == "8.1.0") {
-                if (treble.component1() != "true")
+            if (release == "8.1.0") {
+                if (treble != "true")
                     Path.overlay = Path.OreoOverlay
-                if (treble.component1() == "true")
+                if (treble == "true")
                     Path.overlay = Path.OreoOverlayTreble
             }
-            if (release.component1() == "9")
+            if (release == "9")
                 Path.overlay = Path.PieOverlay
         }
 
         fun addExtraFiles(){
-            if (release.component1() == "9" && platform.component1() == "msm8937"){
+            if (release == "9" && platform == "msm8937"){
                 AIFloatingTouch.addAll(
                         listOf(
                                 "system/priv-app/AIFloatingTouch/oat/arm64/AIFloatingTouch.odex",
@@ -178,12 +178,12 @@ object Const {
                 )
             }
 
-            if (release.component1() != "8.1.0" && platform.component1() != "msm8937")
+            if (release != "8.1.0" && platform != "msm8937")
                 TrafficControl.add(
                         Path.overlay + "com.evenwell.firewall.overlay.base.600WW.apk"
                 )
 
-            if (platform.component1() == "msm8937") {
+            if (platform == "msm8937") {
                 DataSpeedIndicator.addAll(
                         listOf(
                                 "system/priv-app/DataSpeedIndicator/oat/arm64/DataSpeedIndicator.odex",
@@ -199,9 +199,9 @@ object Const {
                 )
             }
 
-            if (release.component1() == "8.1.0")
+            if (release == "8.1.0")
                 JunkCleaner.add("system/priv-app/JunkCleaner/lib/arm64/libdce-1.1.16-mfr.so")
-            else if (release.component1() == "9")
+            else if (release == "9")
                 JunkCleaner.add("system/priv-app/JunkCleaner/lib/arm64/libdce-1.1.18-mfr.so")
 
         }

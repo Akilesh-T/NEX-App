@@ -15,7 +15,6 @@ import app.akilesh.nex.utils.DeviceInfoUtil
 
 class DeviceInfoFragment : Fragment(){
 
-    private var info = mutableListOf<DeviceInfo>()
     private lateinit var binding: FragmentDeviceInfoBinding
 
     override fun onCreateView(
@@ -30,21 +29,32 @@ class DeviceInfoFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         val deviceInfoUtil = DeviceInfoUtil()
-        deviceInfoUtil.init()
-        info = mutableListOf(
-                DeviceInfo("Model", deviceInfoUtil.model),
-                DeviceInfo("Code Name", deviceInfoUtil.codeName),
-                DeviceInfo("Build Version", deviceInfoUtil.buildVersion),
-                DeviceInfo("Build Fingerprint", deviceInfoUtil.buildFingerprint),
-                DeviceInfo("Active Slot", deviceInfoUtil.activeSlot),
-                DeviceInfo("Skuid", deviceInfoUtil.skuid),
-                DeviceInfo("Kernel", System.getProperty("os.version").toString()),
-                DeviceInfo("Android Security Patch", deviceInfoUtil.androidSecurityPatch)
+        deviceInfoUtil.init(requireContext())
+        val info = mutableListOf(
+            DeviceInfo("Model", deviceInfoUtil.model),
+            DeviceInfo("Code Name", deviceInfoUtil.codeName),
+            DeviceInfo("Build Version", deviceInfoUtil.buildVersion),
+            DeviceInfo("Build Fingerprint", deviceInfoUtil.buildFingerprint),
+            DeviceInfo("Skuid", deviceInfoUtil.skuid),
+            DeviceInfo("Kernel", System.getProperty("os.version").toString()),
+            DeviceInfo("Android Security Patch", deviceInfoUtil.androidSecurityPatch),
+            DeviceInfo("SAR", deviceInfoUtil.isSAR)
         )
 
-        if (treble.component1() == "true")
+        if (treble == "true") {
+            info.add(DeviceInfo("Treble", "Supported"))
+        }
+        else info.add(DeviceInfo("Treble", "Unsupported"))
+
+        info.add(DeviceInfo("Seamless updates (A/B)", deviceInfoUtil.isAB))
+
+        if (deviceInfoUtil.isAB == "Yes")
+            info.add(DeviceInfo("Active Slot", deviceInfoUtil.activeSlot))
+
+        if (deviceInfoUtil.vendorSecurityPatch.isNotBlank())
             info.add(DeviceInfo("Vendor Security Patch", deviceInfoUtil.vendorSecurityPatch))
 
+        info.sortBy { it.prop }
         binding.infoRecyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
             adapter = DeviceInfoAdapter(info)

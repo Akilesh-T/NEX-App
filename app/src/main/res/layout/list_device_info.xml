@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:paddingStart="8dp"
-        android:paddingEnd="8dp"/>
+        android:paddingEnd="8dp"
+        android:textIsSelectable="true"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
