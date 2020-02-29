@@ -64,6 +64,7 @@ class UpdateFragment: Fragment() {
                         visibility = View.VISIBLE
                         text = String.format("%s", resources.getString(R.string.hint))
                     }
+                    binding.check.visibility = View.GONE
                 }
             }
             else {

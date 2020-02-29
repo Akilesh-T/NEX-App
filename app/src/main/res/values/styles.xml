@@ -9,27 +9,16 @@
         <item name="colorSurface">@color/colorCustom</item>
         <item name="android:statusBarColor">?colorSurface</item>
         <item name="android:fontFamily">@font/nokia_pure_font</item>
-
-        <item name="dialogTheme">@style/DialogStyle</item>
-        <item name="alertDialogTheme">@style/DialogStyle</item>
-
-        <item name="bottomAppBarStyle">@style/Widget.MaterialComponents.BottomAppBar.PrimarySurface</item>
-        <item name="bottomSheetStyle">@style/Widget.MaterialComponents.BottomSheet.Modal</item>
         <item name="navigationViewStyle">@style/NavigationView</item>
+        <item name="alertDialogTheme">@style/DialogStyle</item>
     </style>
 
-    
     <style name="DialogStyle" parent="Theme.MaterialComponents.DayNight.Dialog">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="colorPrimary">?android:textColorPrimary</item>
+        <item name="colorAccent">?android:textColorPrimary</item>
         <item name="dialogCornerRadius">8dp</item>
-        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
     </style>
-    
-    <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
-        <item name="android:textStyle">bold</item>
-    </style>
-    
+
     <style name="SplashTheme" parent="Theme.MaterialComponents.NoActionBar">
 
         <item name="android:windowBackground">@drawable/background</item>
